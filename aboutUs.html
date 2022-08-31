@@ -1,0 +1,1762 @@
+
+<!DOCTYPE html>
+<html lang="en-US" class="no-js">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"9700abca30",applicationID:"9339867"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?f(e,c,o):o()}function n(n,r,i,o){if(!p.aborted||o){e&&e(n,r,i);for(var a=t(i),c=v(n),f=c.length,u=0;u<f;u++)c[u].apply(a,r);var d=s[w[n]];return d&&d.push([b,n,r,a]),a}}function l(e,t){h[e]=v(e).concat(t)}function m(e,t){var n=h[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(n)}function y(e,t){u(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(6),s={},d={},p=t.exports=i();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&&o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1184.min.js"},w=v&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:w,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0},{}],"wrap-function":[function(e,t,n){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(7),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;t.exports=function(e,t){function n(e,t,n,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof n?n(r,a):n||{}}catch(u){p([u,"",[r,a,i],c])}s(t+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(t+"err",[r,a,d],c),d}finally{s(t+"end",[r,a,f],c)}}return r(e)?e:(t||(t=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,t,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f<t.length;f++)c=t[f],a=e[c],r(a)||(e[c]=n(a,u?c+i:i,o,c))}function s(n,r,i){if(!f||t){var o=f;f=!0;try{e.emit(n,r,i,t)}catch(a){p([a,n,r,i])}f=o}}function d(e,t){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(e);return n.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(r){p([r])}for(var i in e)c.call(e,i)&&(t[i]=e[i]);return t}function p(t){try{e.emit("internal-error",t)}catch(n){}}return e||(e=i),n.inPlace=u,n.flag=a,n}},{}]},{},["loader"]);</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fe541d">
+<link rel="pingback" href="https://komo.vamtam.com/xmlrpc.php" />
+<title>About Us &#8211; Komo &#8211; Rentals &amp; Tours</title>
+<style id="vamtam-theme-options">:root {--vamtam-site-max-width:1260px;
+--vamtam-body-background-background-image:none;
+--vamtam-body-background-background-color:#ffffff;
+--vamtam-body-background-background-repeat:no-repeat;
+--vamtam-body-background-background-attachment:scroll;
+--vamtam-body-background-background-size:cover;
+--vamtam-body-background-background-position:center center;
+--vamtam-accent-color-1:#fe541d;
+--vamtam-accent-color-2:#85c4bd;
+--vamtam-accent-color-3:#30343e;
+--vamtam-accent-color-4:#e4e4e4;
+--vamtam-accent-color-5:#ffffff;
+--vamtam-accent-color-6:#000000;
+--vamtam-accent-color-7:#e4e4e4;
+--vamtam-accent-color-8:#d7fcf5;
+--vamtam-accent-color-1-hc:#ffffff;
+--vamtam-accent-color-2-hc:#000000;
+--vamtam-accent-color-3-hc:#ffffff;
+--vamtam-accent-color-4-hc:#000000;
+--vamtam-accent-color-5-hc:#000000;
+--vamtam-accent-color-6-hc:#ffffff;
+--vamtam-accent-color-7-hc:#000000;
+--vamtam-accent-color-8-hc:#000000;
+--vamtam-h1-font-family:'Montserrat';
+--vamtam-h1-font-size:48px;
+--vamtam-h1-font-weight:bold;
+--vamtam-h1-font-style:normal;
+--vamtam-h1-line-height:1.21;
+--vamtam-h1-color:#000000;
+--vamtam-h2-font-family:'Montserrat';
+--vamtam-h2-font-size:38px;
+--vamtam-h2-font-weight:bold;
+--vamtam-h2-font-style:normal;
+--vamtam-h2-line-height:1.24;
+--vamtam-h2-color:#000000;
+--vamtam-h3-font-family:'PT Serif';
+--vamtam-h3-font-size:28px;
+--vamtam-h3-font-weight:bold;
+--vamtam-h3-font-style:normal;
+--vamtam-h3-line-height:1.29;
+--vamtam-h3-color:#30343e;
+--vamtam-h4-font-family:'PT Serif';
+--vamtam-h4-font-size:20px;
+--vamtam-h4-font-weight:bold;
+--vamtam-h4-font-style:normal;
+--vamtam-h4-line-height:1.3;
+--vamtam-h4-color:#30343e;
+--vamtam-h5-font-family:'PT Serif';
+--vamtam-h5-font-size:18px;
+--vamtam-h5-font-weight:bold;
+--vamtam-h5-font-style:normal;
+--vamtam-h5-line-height:1.28;
+--vamtam-h5-color:#30343e;
+--vamtam-h6-font-family:'Montserrat';
+--vamtam-h6-font-size:12px;
+--vamtam-h6-font-weight:500;
+--vamtam-h6-font-style:normal;
+--vamtam-h6-line-height:1.25;
+--vamtam-h6-color:#30343e;
+--vamtam-em-font-family:'PT Serif';
+--vamtam-em-font-size:14px;
+--vamtam-em-font-weight:normal;
+--vamtam-em-font-style:italic;
+--vamtam-em-line-height:1.57;
+--vamtam-em-color:#303030;
+--vamtam-additional-font-1-font-family:'Montserrat';
+--vamtam-additional-font-1-font-size:48px;
+--vamtam-additional-font-1-font-weight:900;
+--vamtam-additional-font-1-font-style:normal;
+--vamtam-additional-font-1-line-height:1.07;
+--vamtam-additional-font-1-color:#000000;
+--vamtam-additional-font-2-font-family:'Montserrat';
+--vamtam-additional-font-2-font-size:70px;
+--vamtam-additional-font-2-font-weight:bold;
+--vamtam-additional-font-2-font-style:normal;
+--vamtam-additional-font-2-line-height:0.82;
+--vamtam-additional-font-2-color:#000000;
+--vamtam-header-height:80px;
+--vamtam-header-background-background-image:none;
+--vamtam-header-background-background-color:#ffffff;
+--vamtam-header-background-background-repeat:no-repeat;
+--vamtam-header-background-background-attachment:scroll;
+--vamtam-header-background-background-size:contain;
+--vamtam-header-background-background-position:left top;
+--vamtam-sub-header-background-background-image:none;
+--vamtam-sub-header-background-background-color:#ffffff;
+--vamtam-sub-header-background-background-repeat:no-repeat;
+--vamtam-sub-header-background-background-attachment:fixed;
+--vamtam-sub-header-background-background-size:auto;
+--vamtam-sub-header-background-background-position:left top;
+--vamtam-page-title-background-background-image:none;
+--vamtam-page-title-background-background-color:;
+--vamtam-page-title-background-background-repeat:repeat;
+--vamtam-page-title-background-background-attachment:fixed;
+--vamtam-page-title-background-background-size:auto;
+--vamtam-page-title-background-background-position:left top;
+--vamtam-logo-font-family:'Poppins';
+--vamtam-logo-font-size:36px;
+--vamtam-logo-font-weight:600;
+--vamtam-logo-font-style:normal;
+--vamtam-logo-line-height:0.83;
+--vamtam-logo-color:#fe541d;
+--vamtam-main-menu-text-sticky-color:#ffffff;
+--vamtam-left-sidebar-width:30%;
+--vamtam-right-sidebar-width:30%;
+--vamtam-main-background-background-image:none;
+--vamtam-main-background-background-color:#ffffff;
+--vamtam-main-background-background-repeat:repeat;
+--vamtam-main-background-background-attachment:scroll;
+--vamtam-main-background-background-size:auto;
+--vamtam-main-background-background-position:left top;
+--vamtam-primary-font-1:2;
+--vamtam-primary-font-3:2;
+--vamtam-primary-font-5:2;
+--vamtam-primary-font-font-family:'PT Serif';
+--vamtam-primary-font-font-size:15px;
+--vamtam-primary-font-font-weight:normal;
+--vamtam-primary-font-font-style:normal;
+--vamtam-primary-font-line-height:1.6;
+--vamtam-primary-font-color:#4c4c4c;
+--vamtam-body-link-regular:#fe541d;
+--vamtam-body-link-hover:#000000;
+--vamtam-body-link-visited:#fe541d;
+--vamtam-body-link-active:#000000;
+--vamtam-footer-sidebars-titles-font-family:'Libre Baskerville';
+--vamtam-footer-sidebars-titles-font-size:14px;
+--vamtam-footer-sidebars-titles-font-weight:normal;
+--vamtam-footer-sidebars-titles-font-style:normal;
+--vamtam-footer-sidebars-titles-line-height:1.57;
+--vamtam-footer-sidebars-titles-color:#303030;
+--vamtam-mobile-top-bar-resolution:900px;
+--vamtam-beaver-global-row_margins:0px;
+--vamtam-beaver-global-row_margins_unit:px;
+--vamtam-beaver-global-row_margins_medium_unit:px;
+--vamtam-beaver-global-row_margins_responsive_unit:px;
+--vamtam-beaver-global-row_padding:20px;
+--vamtam-beaver-global-row_padding_unit:px;
+--vamtam-beaver-global-row_padding_medium_unit:px;
+--vamtam-beaver-global-row_padding_responsive:10px;
+--vamtam-beaver-global-row_padding_responsive_unit:px;
+--vamtam-beaver-global-row_content_width_default:fixed;
+--vamtam-beaver-global-column_margins_unit:px;
+--vamtam-beaver-global-column_margins_medium_unit:px;
+--vamtam-beaver-global-column_margins_responsive_unit:px;
+--vamtam-beaver-global-column_padding_unit:px;
+--vamtam-beaver-global-column_padding_medium_unit:px;
+--vamtam-beaver-global-column_padding_responsive_unit:px;
+--vamtam-beaver-global-module_margins:10px;
+--vamtam-beaver-global-module_margins_unit:px;
+--vamtam-beaver-global-module_margins_medium_unit:px;
+--vamtam-beaver-global-module_margins_responsive_unit:px;
+--vamtam-beaver-global-responsive_enabled:1;
+--vamtam-beaver-global-auto_spacing:1;
+--vamtam-beaver-global-medium_breakpoint:992;
+--vamtam-beaver-global-responsive_breakpoint:768;
+--vamtam-beaver-global-responsive_col_max_width:1px;
+--vamtam-beaver-global-responsive_base_fontsize:16px;
+--vamtam-beaver-global-row_width:1280px;
+--vamtam-beaver-global-row_width_unit:px;
+--vamtam-beaver-global-show_default_heading:;
+--vamtam-default-bg-color:#ffffff;
+--vamtam-default-line-color:#e4e4e4;
+--vamtam-small-padding:20px;
+--vamtam-horizontal-padding:50px;
+--vamtam-vertical-padding:30px;
+--vamtam-horizontal-padding-large:60px;
+--vamtam-vertical-padding-large:60px;
+--vamtam-no-border-link:none;
+--vamtam-border-radius:24px;
+--vamtam-border-radius-oval:30em;
+--vamtam-border-radius-small:4px;
+--vamtam-overlay-color:white;
+--vamtam-overlay-color-hc:#000000;
+--vamtam-box-outer-padding:60px;
+--vamtam-loading-animation:url('https://komo.vamtam.com/wp-content/themes/komo/vamtam/assets/images/loader-ring.gif');
+--vamtam-accent-color-1-rgb:254,84,29;
+--vamtam-accent-color-2-rgb:133,196,189;
+--vamtam-accent-color-3-rgb:48,52,62;
+--vamtam-accent-color-4-rgb:228,228,228;
+--vamtam-accent-color-5-rgb:255,255,255;
+--vamtam-accent-color-6-rgb:0,0,0;
+--vamtam-accent-color-7-rgb:228,228,228;
+--vamtam-accent-color-8-rgb:215,252,245;
+}</style><link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Komo - Rentals &amp; Tours &raquo; Feed" href="https://komo.vamtam.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Komo - Rentals &amp; Tours &raquo; Comments Feed" href="https://komo.vamtam.com/comments/feed/" />
+<link rel='stylesheet' id='wp-block-library-css' href='https://komo.vamtam.com/wp-includes/css/dist/block-library/style.min.css?ver=5.5.3' type='text/css' media="(max-width: 0px)" onload="media='all'" /><noscript><link rel='stylesheet'   href='https://komo.vamtam.com/wp-includes/css/dist/block-library/style.min.css?ver=5.5.3' type='text/css' media='all' />
+</noscript>
+<link rel='stylesheet' id='fl-builder-layout-16885-css' href='https://komo.vamtam.com/wp-content/uploads/bb-plugin/cache/16885-layout.css?ver=da7d63af2c74398677966da3ba61a59a' type='text/css' media='all' />
+<link rel='stylesheet' id='rs-plugin-settings-css' href='https://komo.vamtam.com/wp-content/plugins/revslider/public/assets/css/rs6.css?ver=6.2.18' type='text/css' media="(max-width: 0px)" onload="media='all'" /><noscript><link rel='stylesheet'   href='https://komo.vamtam.com/wp-content/plugins/revslider/public/assets/css/rs6.css?ver=6.2.18' type='text/css' media='all' />
+</noscript>
+<style id='rs-plugin-settings-inline-css' type='text/css'>
+#rs-demo-id {}
+</style>
+<style>
+				@font-face {
+					font-family: dashicons;
+					src: url(data:application/font-woff2;charset=utf-8;base64,d09GMgABAAAAAAHMAAsAAAAABAwAAAGDAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmAAVBEIClBXATYCJAMUCwwABCAFgwYHIBtGA8gusG3YowATcOTIbUAdBLCHiYfv96Od+2RFPCSX5G0Xa6LTGZpXvNLJtOKhkzR/c1sL5UNf+Gxqlo/fhh4i6A6mBpOYuTllNJdrvH/imvylL5amD/TC0UAVXLXNIolHL7JKLOTdBPe2pTSahoHDU6CUWNADchEfVNLHFN5Ll/hlJdoRXfQ5fEh+H2aNhCwwBKjOgczalMFmyvbZlGITHdokSZj7fdhsGtA4Gj0OC1UPsXyiF1TQgYJuDKG54mS7nBEtwXx043/UG2yZOf7Kl9ffm727/9s6C/i5XlYpZPGAXL4GgqzJXJL/0AVqQWERDwCoUUDMELR7fAY3tP43SlrdUiAj60BBHmNVp2GsRavz4x0mvJIsSrvQo7UACXkIZGQPKMgTrBoxh7XocfHPO6z61Asn6dIVNBH5NcTqdF2aX3QNhKUjp5bMW9wYPfntC7QzLOQDzTGYcF15RN/6EI6wjap3rp4W5mYmR7mDm3oI/Bmq2aAW77jUaQycV5dkBA==) format('woff2'),
+						url(/wp-includes/fonts/dashicons.ttf) format("truetype"),
+						url(/wp-includes/fonts/dashicons.svg#dashicons) format("svg");
+					font-weight: normal;
+					font-style: normal;
+					font-display: swap;
+					unicode-range: U+F140;
+				}
+
+
+				@font-face {
+					font-family: dashicons;
+					src: url(/wp-includes/fonts/dashicons.woff) format("woff"),
+						url(/wp-includes/fonts/dashicons.ttf) format("truetype"),
+						url(/wp-includes/fonts/dashicons.svg#dashicons) format("svg");
+					font-weight: normal;
+					font-style: normal;
+					font-display: swap;
+					unicode-range: U+F100-F10D, U+F110-F112, U+F115-F119, U+F11D-F120, U+F122-F130, U+F132-F136, U+F138-F139, U+F141-F142, U+F145, U+F147-F148, U+F153-F159, U+F160-F161, U+F163-F169, U+F171-F179, U+F180-F185, U+F200-F201, U+F203-F209, U+F210-F219, U+F220-F227, U+F229, U+F230-F239, U+F240, U+F242, U+F301, U+F303-F309, U+F310-F314, U+F316-F319, U+F320-F326, U+F328, U+F330-F339, U+F340-F348, U+F448-F449, U+F450-F457, U+F459, U+F460, U+F462-F466, U+F468-F469, U+F470-F476, U+F478-F479, U+F480-F484, U+F486-F489, U+F490-F493, U+F495-F499, U+F500-F504, U+F506-F509, U+F510-F519, U+F520-F529, U+F530-F531, U+F533-F538, U+F540-F542, U+F545-F547;
+				}
+			</style><link rel='stylesheet' id='vamtam-front-all-css' href='https://komo.vamtam.com/wp-content/themes/komo/vamtam/assets/css/dist/all.css?ver=1599142959' type='text/css' media='all' />
+<style id='vamtam-front-all-inline-css' type='text/css'>
+
+			@font-face {
+				font-family: 'icomoon';
+				src: url(https://komo.vamtam.com/wp-content/themes/komo/vamtam/assets/fonts/icons/icomoon.woff2) format('woff2'),
+				     url( https://komo.vamtam.com/wp-content/themes/komo/vamtam/assets/fonts/icons/icomoon.woff) format('woff'),
+				     url(https://komo.vamtam.com/wp-content/themes/komo/vamtam/assets/fonts/icons/icomoon.ttf) format('ttf');
+				font-weight: normal;
+				font-style: normal;
+				font-display: swap;
+			}
+		
+				@font-face {
+					font-family: 'theme';
+					src: url(https://komo.vamtam.com/wp-content/themes/komo/vamtam/assets/fonts/theme-icons/theme-icons.woff2) format('woff2'),
+						url(https://komo.vamtam.com/wp-content/themes/komo/vamtam/assets/fonts/theme-icons/theme-icons.woff) format('woff');
+					font-weight: normal;
+					font-style: normal;
+					font-display: swap;
+				}
+			
+/* Make Beaver options play nice with the theme */
+
+
+.vamtam-box-outer-padding,
+.limit-wrapper,
+.header-padding {
+	padding-left: calc( var( --vamtam-box-outer-padding ) + var( --vamtam-block-margin-desktop-left, var( --vamtam-beaver-global-module_margins ) ) );
+	padding-right: calc( var( --vamtam-box-outer-padding ) + var( --vamtam-block-margin-desktop-right, var( --vamtam-beaver-global-module_margins ) ) );
+}
+
+body:not(.single-tribe_events):not(.post-type-archive).fl-builder #main > .limit-wrapper,
+body .fl-row-content-wrap {
+	padding-left: var( --vamtam-box-outer-padding );
+	padding-right: var( --vamtam-box-outer-padding );
+}
+
+body:not(.single-tribe_events):not(.post-type-archive).fl-builder #main > .limit-wrapper {
+	max-width: calc( var( --vamtam-site-max-width ) + 2 * var( --vamtam-beaver-global-module_margins ) );
+}
+
+
+.vamtam-box-outer-padding .vamtam-box-outer-padding,
+body .vamtam-box-outer-padding .fl-row-content-wrap,
+.limit-wrapper .limit-wrapper {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+body .post-content .fl-row-full-width .fl-row-fixed-width {
+	padding-left: calc( 20px + var( --vamtam-block-margin-desktop-left, var( --vamtam-beaver-global-module_margins ) ) );
+	padding-right: calc( 20px + var( --vamtam-block-margin-desktop-right, var( --vamtam-beaver-global-module_margins ) ) );
+}
+
+@media ( max-width: 1460px ) {
+	.post-siblings {
+		display: none;
+	}
+}
+
+@media ( min-width: 993px ) and ( max-width: 1260px ) {
+	.vamtam-box-outer-padding,
+	.limit-wrapper,
+	.header-padding {
+		padding-left: calc( 30px + var( --vamtam-block-margin-desktop-left, var( --vamtam-beaver-global-module_margins ) ) );
+		padding-right: calc( 30px + var( --vamtam-block-margin-desktop-right, var( --vamtam-beaver-global-module_margins ) ) );
+	}
+
+	body:not(.single-tribe_events):not(.post-type-archive).fl-builder #main > .limit-wrapper,
+	body .fl-row-content-wrap {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+
+	body .post-content .fl-row-full-width .fl-row-fixed-width {
+		padding-left: calc( 20px + var( --vamtam-beaver-global-module_margins ) );
+		padding-right: calc( 20px + var( --vamtam-beaver-global-module_margins ) );
+	}
+
+	body.single-post .post-content .fl-row-fixed-width {
+		max-width: 840px;
+	}
+}
+
+@media ( max-width: 992px ) {
+	.vamtam-box-outer-padding,
+	.limit-wrapper,
+	.header-padding {
+		padding-left: calc( 20px + var( --vamtam-block-margin-tablet-left, var( --vamtam-beaver-global-module_margins ) ) );
+		padding-right: calc( 20px + var( --vamtam-block-margin-tablet-right, var( --vamtam-beaver-global-module_margins ) ) );
+	}
+
+	body:not(.single-tribe_events):not(.post-type-archive).fl-builder #main > .limit-wrapper,
+	body .fl-row-content-wrap {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	body .post-content .fl-row-full-width .fl-row-fixed-width {
+		padding-left: calc( 10px + var( --vamtam-beaver-global-module_margins ) );
+		padding-right: calc( 10px + var( --vamtam-beaver-global-module_margins ) );
+	}
+
+	body:not(.single-tribe_events):not(.post-type-archive).fl-builder #main:not(.layout-full) .limit-wrapper {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	body .post-content .fl-row-full-width .fl-row-fixed-width,
+	body #main:not(.layout-full) .fl-builder-content > .fl-row-full-width .fl-row-fixed-width,
+	body #main:not(.layout-full) .fl-builder-content > .fl-row-full-width .fl-row-full-width,
+	body #main:not(.layout-full) .fl-builder-content > .fl-row-fixed-width {
+		padding-left: calc( 10px + var( --vamtam-block-margin-tablet-left, var( --vamtam-beaver-global-module_margins ) ) );
+		padding-right: calc( 10px + var( --vamtam-block-margin-tablet-right, var( --vamtam-beaver-global-module_margins ) ) );
+	}
+}
+
+@media ( max-width: 768px ) {
+	.vamtam-box-outer-padding,
+	.limit-wrapper,
+	.header-padding {
+		padding-left: calc( 10px + var( --vamtam-block-margin-phone-left, var( --vamtam-beaver-global-module_margins ) ) );
+		padding-right: calc( 10px + var( --vamtam-block-margin-phone-right, var( --vamtam-beaver-global-module_margins ) ) );
+	}
+
+	body #main:not(.layout-full) .fl-builder-content > .fl-row-full-width .fl-row-fixed-width,
+	body #main:not(.layout-full) .fl-builder-content > .fl-row-full-width .fl-row-full-width,
+	body #main:not(.layout-full) .fl-builder-content > .fl-row-fixed-width {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+	:root { scroll-behavior: smooth; }
+
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Baskerville';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/librebaskerville/v9/kmKnZrc3Hgbbcjq75U4uslyuy4kn0qNXaxMICA.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Baskerville';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/librebaskerville/v9/kmKnZrc3Hgbbcjq75U4uslyuy4kn0qNZaxM.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Baskerville';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/librebaskerville/v9/kmKiZrc3Hgbbcjq75U4uslyuy4kn0qviTgY5KcCsww.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Baskerville';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/librebaskerville/v9/kmKiZrc3Hgbbcjq75U4uslyuy4kn0qviTgY3KcA.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v15/JTURjIg1_i6t8kCHKm45_ZpC3gTD_u50.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v15/JTURjIg1_i6t8kCHKm45_ZpC3g3D_u50.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v15/JTURjIg1_i6t8kCHKm45_ZpC3gbD_u50.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v15/JTURjIg1_i6t8kCHKm45_ZpC3gfD_u50.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v15/JTURjIg1_i6t8kCHKm45_ZpC3gnD_g.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v15/JTURjIg1_i6t8kCHKm45_dJE3gTD_u50.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v15/JTURjIg1_i6t8kCHKm45_dJE3g3D_u50.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v15/JTURjIg1_i6t8kCHKm45_dJE3gbD_u50.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v15/JTURjIg1_i6t8kCHKm45_dJE3gfD_u50.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v15/JTURjIg1_i6t8kCHKm45_dJE3gnD_g.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v15/JTURjIg1_i6t8kCHKm45_epG3gTD_u50.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v15/JTURjIg1_i6t8kCHKm45_epG3g3D_u50.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v15/JTURjIg1_i6t8kCHKm45_epG3gbD_u50.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v15/JTURjIg1_i6t8kCHKm45_epG3gfD_u50.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v15/JTURjIg1_i6t8kCHKm45_epG3gnD_g.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'PT Serif';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ptserif/v12/EJRTQgYoZZY2vCFuvAFT_rC1chb-.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'PT Serif';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ptserif/v12/EJRTQgYoZZY2vCFuvAFT_rm1chb-.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'PT Serif';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ptserif/v12/EJRTQgYoZZY2vCFuvAFT_rO1chb-.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'PT Serif';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ptserif/v12/EJRTQgYoZZY2vCFuvAFT_r21cg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'PT Serif';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ptserif/v12/EJRVQgYoZZY2vCFuvAFbzr-tdg.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'PT Serif';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ptserif/v12/EJRVQgYoZZY2vCFuvAFSzr-tdg.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'PT Serif';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ptserif/v12/EJRVQgYoZZY2vCFuvAFYzr-tdg.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'PT Serif';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ptserif/v12/EJRVQgYoZZY2vCFuvAFWzr8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'PT Serif';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ptserif/v12/EJRSQgYoZZY2vCFuvAnt66qfVyvHpA.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'PT Serif';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ptserif/v12/EJRSQgYoZZY2vCFuvAnt66qWVyvHpA.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'PT Serif';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ptserif/v12/EJRSQgYoZZY2vCFuvAnt66qcVyvHpA.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'PT Serif';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ptserif/v12/EJRSQgYoZZY2vCFuvAnt66qSVys.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v15/pxiByp8kv8JHgFVrLEj6Z11lFc-K.woff2) format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v15/pxiByp8kv8JHgFVrLEj6Z1JlFc-K.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v15/pxiByp8kv8JHgFVrLEj6Z1xlFQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v15/pxiByp8kv8JHgFVrLCz7Z11lFc-K.woff2) format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v15/pxiByp8kv8JHgFVrLCz7Z1JlFc-K.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v15/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+</style>
+<link rel='stylesheet' id='vamtam-theme-mobile-header-css' href='https://komo.vamtam.com/wp-content/themes/komo/vamtam/assets/css/dist/responsive/mobile-header.css?ver=1599142959' type='text/css' media='(max-width: 900px)' />
+<link rel='stylesheet' id='vamtam-theme-layout-max-low-css' href='https://komo.vamtam.com/wp-content/themes/komo/vamtam/assets/css/dist/responsive/layout-max-low.css?ver=1599142959' type='text/css' media="(max-width: 0px)" onload="media='(min-width: 993px) and (max-width: 1260px)'" /><noscript><link rel='stylesheet'   href='https://komo.vamtam.com/wp-content/themes/komo/vamtam/assets/css/dist/responsive/layout-max-low.css?ver=1599142959' type='text/css' media='(min-width: 993px) and (max-width: 1260px)' />
+</noscript>
+<link rel='stylesheet' id='vamtam-theme-layout-max-css' href='https://komo.vamtam.com/wp-content/themes/komo/vamtam/assets/css/dist/responsive/layout-max.css?ver=1599142959' type='text/css' media="(max-width: 0px)" onload="media='(min-width: 993px)'" /><noscript><link rel='stylesheet'   href='https://komo.vamtam.com/wp-content/themes/komo/vamtam/assets/css/dist/responsive/layout-max.css?ver=1599142959' type='text/css' media='(min-width: 993px)' />
+</noscript>
+<link rel='stylesheet' id='vamtam-theme-layout-below-max-css' href='https://komo.vamtam.com/wp-content/themes/komo/vamtam/assets/css/dist/responsive/layout-below-max.css?ver=1599142959' type='text/css' media="(max-width: 0px)" onload="media='(max-width: 992px)'" /><noscript><link rel='stylesheet'   href='https://komo.vamtam.com/wp-content/themes/komo/vamtam/assets/css/dist/responsive/layout-below-max.css?ver=1599142959' type='text/css' media='(max-width: 992px)' />
+</noscript>
+<link rel='stylesheet' id='vamtam-theme-layout-small-css' href='https://komo.vamtam.com/wp-content/themes/komo/vamtam/assets/css/dist/responsive/layout-small.css?ver=1599142959' type='text/css' media="(max-width: 0px)" onload="media='(max-width: 768px)'" /><noscript><link rel='stylesheet'   href='https://komo.vamtam.com/wp-content/themes/komo/vamtam/assets/css/dist/responsive/layout-small.css?ver=1599142959' type='text/css' media='(max-width: 768px)' />
+</noscript>
+<script type='text/javascript' src='https://komo.vamtam.com/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp' id='jquery-core-js'></script>
+<link rel="https://api.w.org/" href="https://komo.vamtam.com/wp-json/" /><link rel="alternate" type="application/json" href="https://komo.vamtam.com/wp-json/wp/v2/pages/16885" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://komo.vamtam.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://komo.vamtam.com/wp-includes/wlwmanifest.xml" />
+<link rel="canonical" href="https://komo.vamtam.com/about-us/" />
+<link rel='shortlink' href='https://komo.vamtam.com/?p=16885' />
+<link rel="alternate" type="application/json+oembed" href="https://komo.vamtam.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fkomo.vamtam.com%2Fabout-us%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://komo.vamtam.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fkomo.vamtam.com%2Fabout-us%2F&#038;format=xml" />
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="About Us" />
+<meta property="og:url" content="https://komo.vamtam.com/about-us/" />
+<meta property="og:description" content="Yes, we can do it! With a fleet of over 1000 bikes, we offer an all inclusive rental package that provides a map, helmet, chain lock and even a basket at no extra charge. We can fit you with the pe…" />
+<meta property="article:published_time" content="2018-05-20T09:09:24+00:00" />
+<meta property="article:modified_time" content="2019-03-08T02:40:39+00:00" />
+<meta property="og:site_name" content="Komo - Rentals &amp; Tours" />
+<meta property="og:image" content="https://komo.vamtam.com/wp-content/uploads/2018/08/cropped-FavIcon-1.gif" />
+<meta property="og:image:width" content="512" />
+<meta property="og:image:height" content="512" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:site" content="@vamtam" />
+<meta name="twitter:text:title" content="About Us" />
+<meta name="twitter:image" content="https://komo.vamtam.com/wp-content/uploads/2018/08/illustration-bike-man-2.svg?w=144" />
+<meta name="twitter:image:alt" content="illustration-bike-man-2" />
+<meta name="twitter:card" content="summary" />
+
+<link rel="icon" href="https://komo.vamtam.com/wp-content/uploads/2018/08/cropped-FavIcon-1-32x32.gif" sizes="32x32" />
+<link rel="icon" href="https://komo.vamtam.com/wp-content/uploads/2018/08/cropped-FavIcon-1-192x192.gif" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://komo.vamtam.com/wp-content/uploads/2018/08/cropped-FavIcon-1-180x180.gif" />
+<meta name="msapplication-TileImage" content="https://komo.vamtam.com/wp-content/uploads/2018/08/cropped-FavIcon-1-270x270.gif" />
+<script type="text/javascript">function setREVStartSize(e){
+			//window.requestAnimationFrame(function() {				 
+				window.RSIW = window.RSIW===undefined ? window.innerWidth : window.RSIW;	
+				window.RSIH = window.RSIH===undefined ? window.innerHeight : window.RSIH;	
+				try {								
+					var pw = document.getElementById(e.c).parentNode.offsetWidth,
+						newh;
+					pw = pw===0 || isNaN(pw) ? window.RSIW : pw;
+					e.tabw = e.tabw===undefined ? 0 : parseInt(e.tabw);
+					e.thumbw = e.thumbw===undefined ? 0 : parseInt(e.thumbw);
+					e.tabh = e.tabh===undefined ? 0 : parseInt(e.tabh);
+					e.thumbh = e.thumbh===undefined ? 0 : parseInt(e.thumbh);
+					e.tabhide = e.tabhide===undefined ? 0 : parseInt(e.tabhide);
+					e.thumbhide = e.thumbhide===undefined ? 0 : parseInt(e.thumbhide);
+					e.mh = e.mh===undefined || e.mh=="" || e.mh==="auto" ? 0 : parseInt(e.mh,0);		
+					if(e.layout==="fullscreen" || e.l==="fullscreen") 						
+						newh = Math.max(e.mh,window.RSIH);					
+					else{					
+						e.gw = Array.isArray(e.gw) ? e.gw : [e.gw];
+						for (var i in e.rl) if (e.gw[i]===undefined || e.gw[i]===0) e.gw[i] = e.gw[i-1];					
+						e.gh = e.el===undefined || e.el==="" || (Array.isArray(e.el) && e.el.length==0)? e.gh : e.el;
+						e.gh = Array.isArray(e.gh) ? e.gh : [e.gh];
+						for (var i in e.rl) if (e.gh[i]===undefined || e.gh[i]===0) e.gh[i] = e.gh[i-1];
+											
+						var nl = new Array(e.rl.length),
+							ix = 0,						
+							sl;					
+						e.tabw = e.tabhide>=pw ? 0 : e.tabw;
+						e.thumbw = e.thumbhide>=pw ? 0 : e.thumbw;
+						e.tabh = e.tabhide>=pw ? 0 : e.tabh;
+						e.thumbh = e.thumbhide>=pw ? 0 : e.thumbh;					
+						for (var i in e.rl) nl[i] = e.rl[i]<window.RSIW ? 0 : e.rl[i];
+						sl = nl[0];									
+						for (var i in nl) if (sl>nl[i] && nl[i]>0) { sl = nl[i]; ix=i;}															
+						var m = pw>(e.gw[ix]+e.tabw+e.thumbw) ? 1 : (pw-(e.tabw+e.thumbw)) / (e.gw[ix]);					
+						newh =  (e.gh[ix] * m) + (e.tabh + e.thumbh);
+					}				
+					if(window.rs_init_css===undefined) window.rs_init_css = document.head.appendChild(document.createElement("style"));					
+					document.getElementById(e.c).height = newh+"px";
+					window.rs_init_css.innerHTML += "#"+e.c+"_wrapper { height: "+newh+"px }";				
+				} catch(e){
+					console.log("Failure at Presize of Slider:" + e)
+				}					   
+			//});
+		  };</script>
+<style type="text/css" id="wp-custom-css">
+				@media (max-width: 480px) {
+	#rev_slider_100_1_wrapper {
+		height: 620px;
+	}
+}
+
+@media (max-width: 900px) {
+	#rev_slider_100_1_wrapper {
+		height: 450px;
+	}
+}
+
+@media (max-width: 1260px) {
+	#rev_slider_100_1_wrapper {
+		height: 560px;
+	}
+}
+
+@media (min-width: 1261px) {
+	#rev_slider_100_1_wrapper {
+		height: 560px;
+	}
+}
+
+header.main-header .mobile-logo-additions,
+header.main-header .mobile-top-bar {
+	display: none;
+}			</style>
+<style type="text/css">/** Saturday 29th December 2018 14:40:39 UTC (core) **//** THIS FILE IS AUTOMATICALLY GENERATED - DO NOT MAKE MANUAL EDITS! **//** Custom CSS should be added to Mega Menu > Menu Themes > Custom Styling **/#mega-menu-wrap-menu-header #mega-menu-menu-header ul, #mega-menu-wrap-menu-header #mega-menu-menu-header li, #mega-menu-wrap-menu-header #mega-menu-menu-header p, #mega-menu-wrap-menu-header #mega-menu-menu-header img:not(.mega-menu-logo), #mega-menu-wrap-menu-header #mega-menu-menu-header div, #mega-menu-wrap-menu-header #mega-menu-menu-header a {color: #000;font-family: inherit;font-size: 13px;background: none;border: 0;-webkit-border-radius: 0 0 0 0;-moz-border-radius: 0 0 0 0;-ms-border-radius: 0 0 0 0;-o-border-radius: 0 0 0 0;border-radius: 0 0 0 0;margin: 0;opacity: 1;padding: 0;position: relative;right: auto;top: auto;bottom: auto;left: auto;text-align: left;text-transform: none;vertical-align: baseline;-webkit-box-shadow: none;-moz-box-shadow: none;-ms-box-shadow: none;-o-box-shadow: none;box-shadow: none;list-style-type: none;line-height: 1.5;box-sizing: border-box;float: none;overflow: visible;display: block;min-height: 0;-webkit-transition: none;-moz-transition: none;-o-transition: none;transition: none;text-decoration: none;width: auto;clip: auto;height: auto;outline: none;visibility: inherit;}#mega-menu-wrap-menu-header #mega-menu-menu-header ul:before, #mega-menu-wrap-menu-header #mega-menu-menu-header li:before, #mega-menu-wrap-menu-header #mega-menu-menu-header p:before, #mega-menu-wrap-menu-header #mega-menu-menu-header img:not(.mega-menu-logo):before, #mega-menu-wrap-menu-header #mega-menu-menu-header div:before, #mega-menu-wrap-menu-header #mega-menu-menu-header a:before, #mega-menu-wrap-menu-header #mega-menu-menu-header ul:after, #mega-menu-wrap-menu-header #mega-menu-menu-header li:after, #mega-menu-wrap-menu-header #mega-menu-menu-header p:after, #mega-menu-wrap-menu-header #mega-menu-menu-header img:not(.mega-menu-logo):after, #mega-menu-wrap-menu-header #mega-menu-menu-header div:after, #mega-menu-wrap-menu-header #mega-menu-menu-header a:after {display: none;}#mega-menu-wrap-menu-header #mega-menu-menu-header table, #mega-menu-wrap-menu-header #mega-menu-menu-header td, #mega-menu-wrap-menu-header #mega-menu-menu-header tr, #mega-menu-wrap-menu-header #mega-menu-menu-header th {border: 0;margin: 0;padding: 0;background: none;}#mega-menu-wrap-menu-header, #mega-menu-wrap-menu-header #mega-menu-menu-header, #mega-menu-wrap-menu-header #mega-menu-menu-header ul.mega-sub-menu, #mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-item, #mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-row, #mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-column, #mega-menu-wrap-menu-header #mega-menu-menu-header a.mega-menu-link {transition: none;-webkit-border-radius: 0 0 0 0;-moz-border-radius: 0 0 0 0;-ms-border-radius: 0 0 0 0;-o-border-radius: 0 0 0 0;border-radius: 0 0 0 0;-webkit-box-shadow: none;-moz-box-shadow: none;-ms-box-shadow: none;-o-box-shadow: none;box-shadow: none;background: none;border: 0;bottom: auto;box-sizing: border-box;clip: auto;color: #000;display: block;float: none;font-family: inherit;font-size: 13px;height: auto;left: auto;line-height: 1.5;list-style-type: none;margin: 0;min-height: auto;max-height: none;opacity: 1;outline: none;overflow: visible;padding: 0;position: relative;pointer-events: auto;right: auto;text-align: left;text-decoration: none;text-transform: none;transform: none;top: auto;vertical-align: baseline;visibility: inherit;width: auto;word-wrap: break-word;}#mega-menu-wrap-menu-header:before, #mega-menu-wrap-menu-header #mega-menu-menu-header:before, #mega-menu-wrap-menu-header #mega-menu-menu-header ul.mega-sub-menu:before, #mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-item:before, #mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-row:before, #mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-column:before, #mega-menu-wrap-menu-header #mega-menu-menu-header a.mega-menu-link:before, #mega-menu-wrap-menu-header:after, #mega-menu-wrap-menu-header #mega-menu-menu-header:after, #mega-menu-wrap-menu-header #mega-menu-menu-header ul.mega-sub-menu:after, #mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-item:after, #mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-row:after, #mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-column:after, #mega-menu-wrap-menu-header #mega-menu-menu-header a.mega-menu-link:after {display: none;}#mega-menu-wrap-menu-header {-webkit-border-radius: 0px 0px 0px 0px;-moz-border-radius: 0px 0px 0px 0px;-ms-border-radius: 0px 0px 0px 0px;-o-border-radius: 0px 0px 0px 0px;border-radius: 0px 0px 0px 0px;}@media only screen and (min-width: 901px) {#mega-menu-wrap-menu-header {background: rgba(255, 255, 255, 0);}}#mega-menu-wrap-menu-header.mega-keyboard-navigation .mega-menu-toggle:focus, #mega-menu-wrap-menu-header.mega-keyboard-navigation #mega-menu-menu-header a:focus, #mega-menu-wrap-menu-header.mega-keyboard-navigation #mega-menu-menu-header input:focus {-webkit-box-shadow: inset 0px 0px 3px 1px #0ff;-moz-box-shadow: inset 0px 0px 3px 1px #0ff;-ms-box-shadow: inset 0px 0px 3px 1px #0ff;-o-box-shadow: inset 0px 0px 3px 1px #0ff;box-shadow: inset 0px 0px 3px 1px #0ff;}#mega-menu-wrap-menu-header.mega-keyboard-navigation > li.mega-menu-item > a.mega-menu-link:focus {background: #30343e;color: #fff;font-weight: bold;text-decoration: none;border-color: #30343e;}@media only screen and (max-width: 900px) {#mega-menu-wrap-menu-header.mega-keyboard-navigation > li.mega-menu-item > a.mega-menu-link:focus {color: #fe541d;background: rgba(198, 35, 35, 0);}}#mega-menu-wrap-menu-header #mega-menu-menu-header {visibility: visible;text-align: center;padding: 0px 0px 0px 0px;}#mega-menu-wrap-menu-header #mega-menu-menu-header a.mega-menu-link {cursor: pointer;display: inline;transition: background 200ms linear, color 200ms linear, border 200ms linear;}#mega-menu-wrap-menu-header #mega-menu-menu-header a.mega-menu-link .mega-description-group {vertical-align: middle;display: inline-block;transition: none;}#mega-menu-wrap-menu-header #mega-menu-menu-header a.mega-menu-link .mega-description-group .mega-menu-title, #mega-menu-wrap-menu-header #mega-menu-menu-header a.mega-menu-link .mega-description-group .mega-menu-description {transition: none;line-height: 1.5;display: block;}#mega-menu-wrap-menu-header #mega-menu-menu-header a.mega-menu-link .mega-description-group .mega-menu-description {font-style: italic;font-size: 0.8em;text-transform: none;font-weight: normal;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-item.mega-icon-top > a.mega-menu-link {display: table-cell;vertical-align: middle;line-height: initial;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-item.mega-icon-top > a.mega-menu-link:before {display: block;margin: 0 0 6px 0;text-align: center;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-item.mega-icon-top > a.mega-menu-link > span.mega-title-below {display: inline-block;transition: none;}@media only screen and (max-width: 900px) {#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-item.mega-icon-top > a.mega-menu-link {display: block;line-height: 46px;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-item.mega-icon-top > a.mega-menu-link:before {display: inline-block;margin: 0 6px 0 0;text-align: left;}}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-item.mega-icon-right > a.mega-menu-link:before {float: right;margin: 0 0 0 6px;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-animating > ul.mega-sub-menu {pointer-events: none;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-disable-link > a.mega-menu-link, #mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu li.mega-disable-link > a.mega-menu-link {cursor: default;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-item-has-children.mega-disable-link > a.mega-menu-link {cursor: pointer;}#mega-menu-wrap-menu-header #mega-menu-menu-header p {margin-bottom: 10px;}#mega-menu-wrap-menu-header #mega-menu-menu-header input, #mega-menu-wrap-menu-header #mega-menu-menu-header img {max-width: 100%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-item > ul.mega-sub-menu {display: block;visibility: hidden;opacity: 1;pointer-events: auto;}@media only screen and (min-width: 901px) {#mega-menu-wrap-menu-header #mega-menu-menu-header[data-effect="fade"] li.mega-menu-item > ul.mega-sub-menu {opacity: 0;transition: opacity 200ms ease-in, visibility 200ms ease-in;}#mega-menu-wrap-menu-header #mega-menu-menu-header[data-effect="fade"].mega-no-js li.mega-menu-item:hover > ul.mega-sub-menu, #mega-menu-wrap-menu-header #mega-menu-menu-header[data-effect="fade"].mega-no-js li.mega-menu-item:focus > ul.mega-sub-menu, #mega-menu-wrap-menu-header #mega-menu-menu-header[data-effect="fade"] li.mega-menu-item.mega-toggle-on > ul.mega-sub-menu, #mega-menu-wrap-menu-header #mega-menu-menu-header[data-effect="fade"] li.mega-menu-item.mega-menu-megamenu.mega-toggle-on ul.mega-sub-menu {opacity: 1;}#mega-menu-wrap-menu-header #mega-menu-menu-header[data-effect="fade_up"] li.mega-menu-item.mega-menu-megamenu > ul.mega-sub-menu, #mega-menu-wrap-menu-header #mega-menu-menu-header[data-effect="fade_up"] li.mega-menu-item.mega-menu-flyout ul.mega-sub-menu {opacity: 0;transform: translate(0, 10px);transition: opacity 200ms ease-in, transform 200ms ease-in, visibility 200ms ease-in;}#mega-menu-wrap-menu-header #mega-menu-menu-header[data-effect="fade_up"].mega-no-js li.mega-menu-item:hover > ul.mega-sub-menu, #mega-menu-wrap-menu-header #mega-menu-menu-header[data-effect="fade_up"].mega-no-js li.mega-menu-item:focus > ul.mega-sub-menu, #mega-menu-wrap-menu-header #mega-menu-menu-header[data-effect="fade_up"] li.mega-menu-item.mega-toggle-on > ul.mega-sub-menu, #mega-menu-wrap-menu-header #mega-menu-menu-header[data-effect="fade_up"] li.mega-menu-item.mega-menu-megamenu.mega-toggle-on ul.mega-sub-menu {opacity: 1;transform: translate(0, 0);}#mega-menu-wrap-menu-header #mega-menu-menu-header[data-effect="slide_up"] li.mega-menu-item.mega-menu-megamenu > ul.mega-sub-menu, #mega-menu-wrap-menu-header #mega-menu-menu-header[data-effect="slide_up"] li.mega-menu-item.mega-menu-flyout ul.mega-sub-menu {transform: translate(0, 10px);transition: transform 200ms ease-in, visibility 200ms ease-in;}#mega-menu-wrap-menu-header #mega-menu-menu-header[data-effect="slide_up"].mega-no-js li.mega-menu-item:hover > ul.mega-sub-menu, #mega-menu-wrap-menu-header #mega-menu-menu-header[data-effect="slide_up"].mega-no-js li.mega-menu-item:focus > ul.mega-sub-menu, #mega-menu-wrap-menu-header #mega-menu-menu-header[data-effect="slide_up"] li.mega-menu-item.mega-toggle-on > ul.mega-sub-menu, #mega-menu-wrap-menu-header #mega-menu-menu-header[data-effect="slide_up"] li.mega-menu-item.mega-menu-megamenu.mega-toggle-on ul.mega-sub-menu {transform: translate(0, 0);}}#mega-menu-wrap-menu-header #mega-menu-menu-header.mega-no-js li.mega-menu-item:hover > ul.mega-sub-menu, #mega-menu-wrap-menu-header #mega-menu-menu-header.mega-no-js li.mega-menu-item:focus > ul.mega-sub-menu, #mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-item.mega-toggle-on > ul.mega-sub-menu {visibility: visible;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-item.mega-menu-megamenu ul.mega-sub-menu ul.mega-sub-menu {visibility: inherit;opacity: 1;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-item a[class^='dashicons']:before {font-family: dashicons;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-item a.mega-menu-link:before {display: inline-block;font: inherit;font-family: dashicons;position: static;margin: 0 6px 0 0px;vertical-align: top;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: inherit;background: transparent;height: auto;width: auto;top: auto;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-item.mega-hide-text a.mega-menu-link:before {margin: 0;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-item.mega-hide-text li.mega-menu-item a.mega-menu-link:before {margin: 0 6px 0 0;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-align-bottom-left.mega-toggle-on > a.mega-menu-link {-webkit-border-radius: 4px 4px 0 0;-moz-border-radius: 4px 4px 0 0;-ms-border-radius: 4px 4px 0 0;-o-border-radius: 4px 4px 0 0;border-radius: 4px 4px 0 0;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-align-bottom-right > ul.mega-sub-menu {right: 0;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-align-bottom-right.mega-toggle-on > a.mega-menu-link {-webkit-border-radius: 4px 4px 0 0;-moz-border-radius: 4px 4px 0 0;-ms-border-radius: 4px 4px 0 0;-o-border-radius: 4px 4px 0 0;border-radius: 4px 4px 0 0;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-item {margin: 0 3px 0 0;display: inline-block;height: auto;vertical-align: middle;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-item.mega-item-align-right {float: right;}@media only screen and (min-width: 901px) {#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-item.mega-item-align-right {margin: 0 0 0 3px;}}@media only screen and (min-width: 901px) {#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-item.mega-item-align-float-left {float: left;}}@media only screen and (min-width: 901px) {#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-item > a.mega-menu-link:hover {background: #30343e;color: #fff;font-weight: bold;text-decoration: none;border-color: #30343e;}}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-item.mega-toggle-on > a.mega-menu-link {background: #30343e;color: #fff;font-weight: bold;text-decoration: none;border-color: #30343e;}@media only screen and (max-width: 900px) {#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-item.mega-toggle-on > a.mega-menu-link {color: #fe541d;background: rgba(198, 35, 35, 0);}}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-item.mega-current-menu-item > a.mega-menu-link, #mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-item.mega-current-menu-ancestor > a.mega-menu-link, #mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link {background: #30343e;color: #fff;font-weight: bold;text-decoration: none;border-color: #30343e;}@media only screen and (max-width: 900px) {#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-item.mega-current-menu-item > a.mega-menu-link, #mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-item.mega-current-menu-ancestor > a.mega-menu-link, #mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link {color: #fe541d;background: rgba(198, 35, 35, 0);}}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-item > a.mega-menu-link {border-top: 0px solid rgba(255, 255, 255, 0);border-left: 0px solid rgba(255, 255, 255, 0);border-right: 0px solid rgba(255, 255, 255, 0);border-bottom: 0px solid rgba(255, 255, 255, 0);outline: none;text-decoration: none;padding: 0px 15px 0px 15px;line-height: 36px;font-weight: bold;height: 36px;vertical-align: baseline;text-align: center;width: auto;display: block;color: #000;text-transform: uppercase;text-decoration: none;background: rgba(0, 0, 0, 0);-webkit-border-radius: 4px 4px 4px 4px;-moz-border-radius: 4px 4px 4px 4px;-ms-border-radius: 4px 4px 4px 4px;-o-border-radius: 4px 4px 4px 4px;border-radius: 4px 4px 4px 4px;font-family: inherit;font-size: 14px;}@media only screen and (min-width: 901px) {#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-item.mega-multi-line > a.mega-menu-link {line-height: inherit;display: table-cell;vertical-align: middle;}}@media only screen and (max-width: 900px) {#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-item.mega-multi-line > a.mega-menu-link br {display: none;}}@media only screen and (max-width: 900px) {#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-item {display: list-item;margin: 0;clear: both;border: 0;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-item.mega-item-align-right {float: none;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-item > a.mega-menu-link {-webkit-border-radius: 0 0 0 0;-moz-border-radius: 0 0 0 0;-ms-border-radius: 0 0 0 0;-o-border-radius: 0 0 0 0;border-radius: 0 0 0 0;border: 0;margin: 0;line-height: 46px;height: 46px;padding: 0 10px;background: transparent;text-align: left;color: #000;font-size: 18px;}}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row {width: 100%;float: left;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row .mega-menu-column {float: left;min-height: 1px;}@media only screen and (min-width: 901px) {#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-1-of-1 {width: 100%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-1-of-2 {width: 50%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-2-of-2 {width: 100%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-1-of-3 {width: 33.33333%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-2-of-3 {width: 66.66667%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-3-of-3 {width: 100%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-1-of-4 {width: 25%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-2-of-4 {width: 50%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-3-of-4 {width: 75%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-4-of-4 {width: 100%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-1-of-5 {width: 20%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-2-of-5 {width: 40%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-3-of-5 {width: 60%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-4-of-5 {width: 80%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-5-of-5 {width: 100%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-1-of-6 {width: 16.66667%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-2-of-6 {width: 33.33333%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-3-of-6 {width: 50%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-4-of-6 {width: 66.66667%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-5-of-6 {width: 83.33333%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-6-of-6 {width: 100%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-1-of-7 {width: 14.28571%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-2-of-7 {width: 28.57143%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-3-of-7 {width: 42.85714%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-4-of-7 {width: 57.14286%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-5-of-7 {width: 71.42857%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-6-of-7 {width: 85.71429%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-7-of-7 {width: 100%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-1-of-8 {width: 12.5%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-2-of-8 {width: 25%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-3-of-8 {width: 37.5%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-4-of-8 {width: 50%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-5-of-8 {width: 62.5%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-6-of-8 {width: 75%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-7-of-8 {width: 87.5%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-8-of-8 {width: 100%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-1-of-9 {width: 11.11111%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-2-of-9 {width: 22.22222%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-3-of-9 {width: 33.33333%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-4-of-9 {width: 44.44444%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-5-of-9 {width: 55.55556%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-6-of-9 {width: 66.66667%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-7-of-9 {width: 77.77778%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-8-of-9 {width: 88.88889%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-9-of-9 {width: 100%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-1-of-10 {width: 10%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-2-of-10 {width: 20%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-3-of-10 {width: 30%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-4-of-10 {width: 40%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-5-of-10 {width: 50%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-6-of-10 {width: 60%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-7-of-10 {width: 70%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-8-of-10 {width: 80%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-9-of-10 {width: 90%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-10-of-10 {width: 100%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-1-of-11 {width: 9.09091%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-2-of-11 {width: 18.18182%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-3-of-11 {width: 27.27273%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-4-of-11 {width: 36.36364%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-5-of-11 {width: 45.45455%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-6-of-11 {width: 54.54545%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-7-of-11 {width: 63.63636%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-8-of-11 {width: 72.72727%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-9-of-11 {width: 81.81818%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-10-of-11 {width: 90.90909%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-11-of-11 {width: 100%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-1-of-12 {width: 8.33333%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-2-of-12 {width: 16.66667%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-3-of-12 {width: 25%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-4-of-12 {width: 33.33333%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-5-of-12 {width: 41.66667%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-6-of-12 {width: 50%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-7-of-12 {width: 58.33333%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-8-of-12 {width: 66.66667%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-9-of-12 {width: 75%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-10-of-12 {width: 83.33333%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-11-of-12 {width: 91.66667%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-columns-12-of-12 {width: 100%;}}@media only screen and (max-width: 900px) {#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-column {width: 50%;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row > ul.mega-sub-menu > li.mega-menu-column.mega-menu-clear {clear: left;}}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row .mega-menu-column > ul.mega-sub-menu > li.mega-menu-item {padding: 0px 0px 0px 0px;width: 100%;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu {z-index: 999;-webkit-border-radius: 0px 0px 0px 0px;-moz-border-radius: 0px 0px 0px 0px;-ms-border-radius: 0px 0px 0px 0px;-o-border-radius: 0px 0px 0px 0px;border-radius: 0px 0px 0px 0px;background: #fff;padding: 0px 0px 0px 0px;position: absolute;width: 800px;border-top: 0px solid rgba(255, 255, 255, 0);border-left: 0px solid rgba(255, 255, 255, 0);border-right: 0px solid rgba(255, 255, 255, 0);border-bottom: 0px solid rgba(255, 255, 255, 0);max-width: none;-webkit-box-shadow: 0px 1px 40px 0px rgba(0, 0, 0, 0.06);-moz-box-shadow: 0px 1px 40px 0px rgba(0, 0, 0, 0.06);-ms-box-shadow: 0px 1px 40px 0px rgba(0, 0, 0, 0.06);-o-box-shadow: 0px 1px 40px 0px rgba(0, 0, 0, 0.06);box-shadow: 0px 1px 40px 0px rgba(0, 0, 0, 0.06);}@media only screen and (max-width: 900px) {#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu {float: left;position: static;width: 100%;}}@media only screen and (min-width: 901px) {#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-1-of-1 {width: 100%;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-1-of-2 {width: 50%;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-2-of-2 {width: 100%;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-1-of-3 {width: 33.33333%;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-2-of-3 {width: 66.66667%;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-3-of-3 {width: 100%;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-1-of-4 {width: 25%;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-2-of-4 {width: 50%;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-3-of-4 {width: 75%;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-4-of-4 {width: 100%;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-1-of-5 {width: 20%;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-2-of-5 {width: 40%;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-3-of-5 {width: 60%;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-4-of-5 {width: 80%;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-5-of-5 {width: 100%;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-1-of-6 {width: 16.66667%;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-2-of-6 {width: 33.33333%;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-3-of-6 {width: 50%;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-4-of-6 {width: 66.66667%;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-5-of-6 {width: 83.33333%;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-6-of-6 {width: 100%;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-1-of-7 {width: 14.28571%;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-2-of-7 {width: 28.57143%;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-3-of-7 {width: 42.85714%;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-4-of-7 {width: 57.14286%;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-5-of-7 {width: 71.42857%;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-6-of-7 {width: 85.71429%;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-7-of-7 {width: 100%;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-1-of-8 {width: 12.5%;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-2-of-8 {width: 25%;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-3-of-8 {width: 37.5%;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-4-of-8 {width: 50%;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-5-of-8 {width: 62.5%;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-6-of-8 {width: 75%;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-7-of-8 {width: 87.5%;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-8-of-8 {width: 100%;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-1-of-9 {width: 11.11111%;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-2-of-9 {width: 22.22222%;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-3-of-9 {width: 33.33333%;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-4-of-9 {width: 44.44444%;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-5-of-9 {width: 55.55556%;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-6-of-9 {width: 66.66667%;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-7-of-9 {width: 77.77778%;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-8-of-9 {width: 88.88889%;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-columns-9-of-9 {width: 100%;}}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu .mega-description-group .mega-menu-description {margin: 5px 0;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item ul.mega-sub-menu {clear: both;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item ul.mega-sub-menu li.mega-menu-item ul.mega-sub-menu {margin-left: 10px;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-column > ul.mega-sub-menu ul.mega-sub-menu ul.mega-sub-menu {margin-left: 10px;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item, #mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-column > ul.mega-sub-menu > li.mega-menu-item {color: #000;font-family: inherit;font-size: 13px;display: block;float: left;clear: none;padding: 0px 0px 0px 0px;vertical-align: top;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item.mega-menu-clear, #mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-column > ul.mega-sub-menu > li.mega-menu-item.mega-menu-clear {clear: left;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item h4.mega-block-title, #mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-column > ul.mega-sub-menu > li.mega-menu-item h4.mega-block-title {color: #826e66;font-family: inherit;font-size: 14px;text-transform: none;text-decoration: none;font-weight: normal;margin: 50px 0px 0px 0px;padding: 0px 0px 5px 0px;vertical-align: top;display: block;visibility: inherit;border-top: 0px solid rgba(85, 85, 85, 0);border-left: 0px solid rgba(85, 85, 85, 0);border-right: 0px solid rgba(85, 85, 85, 0);border-bottom: 0px solid rgba(85, 85, 85, 0);}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link, #mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-column > ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link {/* Mega Menu > Menu Themes > Mega Menus > Second Level Menu Items */color: #000;font-family: inherit;font-size: 22px;text-transform: none;text-decoration: none;font-weight: 300;margin: 0px 0px 0px 0px;padding: 30px 0px 10px 30px;vertical-align: top;display: block;border-top: 0px solid #ededed;border-left: 0px solid #ededed;border-right: 0px solid #ededed;border-bottom: 0px solid #ededed;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link:hover, #mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-column > ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link:hover, #mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link:focus, #mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-column > ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link:focus {/* Mega Menu > Menu Themes > Mega Menus > Second Level Menu Items (Hover) */color: #000;font-weight: inherit;text-decoration: none;background: rgba(255, 250, 248, 0);}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item li.mega-menu-item > a.mega-menu-link, #mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-column > ul.mega-sub-menu > li.mega-menu-item li.mega-menu-item > a.mega-menu-link {/* Mega Menu > Menu Themes > Mega Menus > Third Level Menu Items */color: #777;font-family: inherit;font-size: 14px;text-transform: none;text-decoration: none;font-weight: 300;margin: 0;padding: 10px 0px 10px 30px;vertical-align: top;display: block;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item li.mega-menu-item > a.mega-menu-link:hover, #mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-column > ul.mega-sub-menu > li.mega-menu-item li.mega-menu-item > a.mega-menu-link:hover, #mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item li.mega-menu-item > a.mega-menu-link:focus, #mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-column > ul.mega-sub-menu > li.mega-menu-item li.mega-menu-item > a.mega-menu-link:focus {/* Mega Menu > Menu Themes > Mega Menus > Third Level Menu Items (Hover) */color: #000;font-weight: 300;text-decoration: none;background: #fff9f5;}@media only screen and (max-width: 900px) {#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu {border: 0;padding: 10px;-webkit-border-radius: 0 0 0 0;-moz-border-radius: 0 0 0 0;-ms-border-radius: 0 0 0 0;-o-border-radius: 0 0 0 0;border-radius: 0 0 0 0;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item {width: 50%;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu > li:nth-child(odd) {clear: left;}}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu.mega-no-headers > ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link {color: #777;font-family: inherit;font-size: 14px;text-transform: none;text-decoration: none;font-weight: 300;margin: 0;border: 0;padding: 10px 0px 10px 30px;vertical-align: top;display: block;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu.mega-no-headers > ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link:hover, #mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu.mega-no-headers > ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link:focus {color: #000;font-weight: 300;text-decoration: none;background: #fff9f5;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-flyout ul.mega-sub-menu {z-index: 999;position: absolute;width: 220px;border-top: 0px solid rgba(198, 35, 35, 0);border-left: 0px solid rgba(198, 35, 35, 0);border-right: 0px solid rgba(198, 35, 35, 0);border-bottom: 0px solid rgba(198, 35, 35, 0);padding: 0px 0px 0px 0px;background: #fff;max-width: none;-webkit-box-shadow: 0px 1px 40px 0px rgba(0, 0, 0, 0.06);-moz-box-shadow: 0px 1px 40px 0px rgba(0, 0, 0, 0.06);-ms-box-shadow: 0px 1px 40px 0px rgba(0, 0, 0, 0.06);-o-box-shadow: 0px 1px 40px 0px rgba(0, 0, 0, 0.06);box-shadow: 0px 1px 40px 0px rgba(0, 0, 0, 0.06);}@media only screen and (max-width: 900px) {#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-flyout ul.mega-sub-menu {float: left;position: static;width: 100%;padding: 0;border: 0;}}@media only screen and (max-width: 900px) {#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-flyout ul.mega-sub-menu li.mega-menu-item {clear: both;}}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-flyout ul.mega-sub-menu li.mega-menu-item a.mega-menu-link {display: block;background: rgba(0, 0, 0, 0);color: #30343e;font-family: inherit;font-size: 13px;font-weight: bold;padding: 14px 25px 14px 25px;line-height: 20px;text-decoration: none;text-transform: none;vertical-align: baseline;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-flyout ul.mega-sub-menu li.mega-menu-item:first-child > a.mega-menu-link {border-top-left-radius: 0px;border-top-right-radius: 0px;}@media only screen and (max-width: 900px) {#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-flyout ul.mega-sub-menu li.mega-menu-item:first-child > a.mega-menu-link {border-top-left-radius: 0;border-top-right-radius: 0;}}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-flyout ul.mega-sub-menu li.mega-menu-item:last-child > a.mega-menu-link {border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;}@media only screen and (max-width: 900px) {#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-flyout ul.mega-sub-menu li.mega-menu-item:last-child > a.mega-menu-link {border-bottom-right-radius: 0;border-bottom-left-radius: 0;}}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-flyout ul.mega-sub-menu li.mega-menu-item a.mega-menu-link:hover, #mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-flyout ul.mega-sub-menu li.mega-menu-item a.mega-menu-link:focus {background: #f9f5ef;font-weight: bold;text-decoration: none;color: #000;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-flyout ul.mega-sub-menu li.mega-menu-item ul.mega-sub-menu {position: absolute;left: 100%;top: 0;}@media only screen and (max-width: 900px) {#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-flyout ul.mega-sub-menu li.mega-menu-item ul.mega-sub-menu {position: static;left: 0;width: 100%;}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-flyout ul.mega-sub-menu li.mega-menu-item ul.mega-sub-menu a.mega-menu-link {padding-left: 20px;}}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-item-has-children > a.mega-menu-link:after, #mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-item-has-children > a.mega-menu-link span.mega-indicator:after {content: '';display: inline-block;font-family: dashicons;margin: 0 0 0 6px;vertical-align: top;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;transform: rotate(0);color: inherit;position: relative;background: transparent;height: auto;width: auto;right: auto;line-height: inherit;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-item-has-children > a.mega-menu-link > span.mega-indicator {display: none;float: right;height: auto;width: auto;background: transparent;position: relative;pointer-events: auto;left: auto;min-width: auto;line-height: inherit;color: inherit;font-size: inherit;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-item-has-children > a.mega-menu-link > span.mega-indicator:after {content: '';}@media only screen and (max-width: 900px) {#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-item-has-children a.mega-menu-link:after {float: right;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-item-has-children.mega-toggle-on > a.mega-menu-link:after {display: none;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-item-has-children.mega-toggle-on > a.mega-menu-link > span.mega-indicator {display: inline-block;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-item-has-children.mega-hide-sub-menu-on-mobile > a.mega-menu-link:after {display: none;}}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-megamenu:not(.mega-menu-tabbed) li.mega-menu-item-has-children > a.mega-menu-link:after, #mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-item-has-children.mega-hide-arrow > a.mega-menu-link:after {display: none;}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-item li.mega-menu-item-has-children > a.mega-menu-link:after {content: '\f345';float: right;}@media only screen and (max-width: 900px) {#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-item li.mega-menu-item-has-children > a.mega-menu-link:after {content: '';}}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-flyout.mega-align-bottom-right li.mega-menu-item a.mega-menu-link {text-align: right;}@media only screen and (max-width: 900px) {#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-flyout.mega-align-bottom-right li.mega-menu-item a.mega-menu-link {text-align: left;}}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-flyout.mega-align-bottom-right li.mega-menu-item a.mega-menu-link:before {float: right;margin: 0 0 0 6px;}@media only screen and (max-width: 900px) {#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-flyout.mega-align-bottom-right li.mega-menu-item a.mega-menu-link:before {float: left;margin: 0 6px 0 0;}}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-flyout.mega-align-bottom-right li.mega-menu-item-has-children > a.mega-menu-link:after {content: '\f341';float: left;margin: 0;}@media only screen and (max-width: 900px) {#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-flyout.mega-align-bottom-right li.mega-menu-item-has-children > a.mega-menu-link:after {content: '';float: right;}}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-flyout.mega-align-bottom-right ul.mega-sub-menu li.mega-menu-item ul.mega-sub-menu {left: -100%;top: 0;}#mega-menu-wrap-menu-header #mega-menu-menu-header li[class^='mega-lang-item'] > a.mega-menu-link > img {display: inline;}#mega-menu-wrap-menu-header #mega-menu-menu-header a.mega-menu-link > img.wpml-ls-flag, #mega-menu-wrap-menu-header #mega-menu-menu-header a.mega-menu-link > img.iclflag {display: inline;margin-right: 8px;}@media only screen and (max-width: 900px) {#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-hide-on-mobile, #mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-hide-on-mobile, #mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-column > ul.mega-sub-menu > li.mega-menu-item.mega-hide-on-mobile {display: none;}}@media only screen and (min-width: 901px) {#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-hide-on-desktop, #mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-hide-on-desktop, #mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-column > ul.mega-sub-menu > li.mega-menu-item.mega-hide-on-desktop {display: none;}}@media only screen and (max-width: 900px) {#mega-menu-wrap-menu-header:after {content: "";display: table;clear: both;}}#mega-menu-wrap-menu-header .mega-menu-toggle {display: none;z-index: 1;cursor: pointer;background: rgba(255, 255, 255, 0);-webkit-border-radius: 2px 2px 2px 2px;-moz-border-radius: 2px 2px 2px 2px;-ms-border-radius: 2px 2px 2px 2px;-o-border-radius: 2px 2px 2px 2px;border-radius: 2px 2px 2px 2px;line-height: 40px;height: 40px;text-align: left;-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;-webkit-tap-highlight-color: transparent;outline: none;white-space: nowrap;}#mega-menu-wrap-menu-header .mega-menu-toggle img {max-width: 100%;padding: 0;}@media only screen and (max-width: 900px) {#mega-menu-wrap-menu-header .mega-menu-toggle {display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;}}#mega-menu-wrap-menu-header .mega-menu-toggle .mega-toggle-blocks-left, #mega-menu-wrap-menu-header .mega-menu-toggle .mega-toggle-blocks-center, #mega-menu-wrap-menu-header .mega-menu-toggle .mega-toggle-blocks-right {display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;-ms-flex-preferred-size: 33.33%;-webkit-flex-basis: 33.33%;flex-basis: 33.33%;}#mega-menu-wrap-menu-header .mega-menu-toggle .mega-toggle-blocks-left {-webkit-box-flex: 1;-ms-flex: 1;-webkit-flex: 1;flex: 1;-webkit-box-pack: start;-ms-flex-pack: start;-webkit-justify-content: flex-start;justify-content: flex-start;}#mega-menu-wrap-menu-header .mega-menu-toggle .mega-toggle-blocks-left .mega-toggle-block {margin-left: 6px;}#mega-menu-wrap-menu-header .mega-menu-toggle .mega-toggle-blocks-center {-webkit-box-pack: center;-ms-flex-pack: center;-webkit-justify-content: center;justify-content: center;}#mega-menu-wrap-menu-header .mega-menu-toggle .mega-toggle-blocks-center .mega-toggle-block {margin-left: 3px;margin-right: 3px;}#mega-menu-wrap-menu-header .mega-menu-toggle .mega-toggle-blocks-right {-webkit-box-flex: 1;-ms-flex: 1;-webkit-flex: 1;flex: 1;-webkit-box-pack: end;-ms-flex-pack: end;-webkit-justify-content: flex-end;justify-content: flex-end;}#mega-menu-wrap-menu-header .mega-menu-toggle .mega-toggle-blocks-right .mega-toggle-block {margin-right: 6px;}#mega-menu-wrap-menu-header .mega-menu-toggle .mega-toggle-block {display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;height: 100%;-webkit-align-self: center;-ms-flex-item-align: center;align-self: center;-ms-flex-negative: 0;-webkit-flex-shrink: 0;flex-shrink: 0;}@media only screen and (max-width: 900px) {#mega-menu-wrap-menu-header .mega-menu-toggle + #mega-menu-menu-header {background: rgba(255, 255, 255, 0);background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(255, 255, 255, 0)));background: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0));background: -ms-linear-gradient(top, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0));background: -o-linear-gradient(top, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0));background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0));filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#00FFFFFF');padding: 0;display: none;}#mega-menu-wrap-menu-header .mega-menu-toggle + #mega-menu-menu-header li.mega-menu-item > ul.mega-sub-menu {display: none;visibility: visible;opacity: 1;}#mega-menu-wrap-menu-header .mega-menu-toggle + #mega-menu-menu-header li.mega-menu-item.mega-toggle-on > ul.mega-sub-menu, #mega-menu-wrap-menu-header .mega-menu-toggle + #mega-menu-menu-header li.mega-menu-megamenu.mega-menu-item.mega-toggle-on ul.mega-sub-menu {display: block;}#mega-menu-wrap-menu-header .mega-menu-toggle.mega-menu-open + #mega-menu-menu-header {display: block;}}#mega-menu-wrap-menu-header .mega-menu-toggle .mega-toggle-block-1:after {content: '\f333';font-family: 'dashicons';font-size: 24px;color: #b69e59;margin: 0 0 0 5px;}#mega-menu-wrap-menu-header .mega-menu-toggle .mega-toggle-block-1 .mega-toggle-label {color: #b69e59;font-size: 14px;}#mega-menu-wrap-menu-header .mega-menu-toggle .mega-toggle-block-1 .mega-toggle-label .mega-toggle-label-open {display: none;}#mega-menu-wrap-menu-header .mega-menu-toggle .mega-toggle-block-1 .mega-toggle-label .mega-toggle-label-closed {display: inline;}#mega-menu-wrap-menu-header .mega-menu-toggle.mega-menu-open .mega-toggle-block-1:after {content: '\f335';}#mega-menu-wrap-menu-header .mega-menu-toggle.mega-menu-open .mega-toggle-block-1 .mega-toggle-label-open {display: inline;}#mega-menu-wrap-menu-header .mega-menu-toggle.mega-menu-open .mega-toggle-block-1 .mega-toggle-label-closed {display: none;}#mega-menu-wrap-menu-header {clear: both;}#mega-menu-wrap-menu-header #mega-menu-menu-header .widget_product_categories ul.product-categories li a {transition: initial !important;}#mega-menu-wrap-menu-header #mega-menu-menu-header .widget_product_categories ul.product-categories li a {transition: initial !important;/* Apply Hover Styling to active Mega Menu - Second Level Links */}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item.mega-current-menu-item > a.mega-menu-link {color: #000;font-weight: inherit;text-decoration: none;background: rgba(255, 250, 248, 0);/* Apply Hover Styling to active Mega Menu - Third Level Links */}#mega-menu-wrap-menu-header #mega-menu-menu-header > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item li.mega-menu-item.mega-current-menu-item > a.mega-menu-link {color: #000;font-weight: 300;text-decoration: none;background: #fff9f5;/* Apply Hover Styling to active Flyout Links */}#mega-menu-wrap-menu-header #mega-menu-menu-header li.mega-menu-flyout ul.mega-sub-menu li.mega-menu-item.mega-current-menu-item > a.mega-menu-link {background: #f9f5ef;font-weight: bold;text-decoration: none;color: #000;}</style>
+</head>
+<body class="page-template-default page page-id-16885 page-parent wp-custom-logo wp-embed-responsive fl-builder mega-menu-menu-header full header-layout-logo-menu pagination-load-more sticky-header-type-normal has-page-header no-middle-header no-header-slider responsive-layout sticky-header layout-full">
+<div id="top"></div>
+<div class="fixed-header-box sticky-header-state-reset" style="">
+<header class="main-header layout-logo-menu layout-single-row header-content-wrapper header-background">
+<div id="top-nav-wrapper">
+<nav class="top-nav">
+<link rel='stylesheet' id='fl-builder-layout-13550-css' href='https://komo.vamtam.com/wp-content/uploads/bb-plugin/cache/13550-layout-partial.css?ver=92356cf5b74cc093fdf161207eb680ee' type='text/css' media='all' />
+<div class="fl-builder-content fl-builder-content-13550 fl-builder-template fl-builder-row-template fl-builder-global-templates-locked" data-post-id="13550"><div class="fl-row fl-row-full-width fl-row-bg-color fl-node-598afcd2173a5 vamtam-rounded-corners fl-row-bg-attachment-scroll" data-node="598afcd2173a5">
+<div class="fl-row-content-wrap">
+<div class="fl-row-content fl-row-fixed-width fl-node-content">
+<div class="fl-col-group fl-node-5c82709097e2d" data-node="5c82709097e2d">
+<div class="fl-col fl-node-5c827090983e3 fl-col-has-cols" data-node="5c827090983e3">
+<div class="fl-col-content fl-node-content">
+<div class="fl-col-group fl-node-5c8270930c435 fl-col-group-nested fl-col-group-equal-height fl-col-group-align-center fl-col-group-custom-width" data-node="5c8270930c435">
+<div class="fl-col fl-node-598f56b8bddf8 fl-col-small" data-node="598f56b8bddf8">
+<div class="fl-col-content fl-node-content">
+<div class="fl-module fl-module-rich-text fl-node-5b7eb0220d0b2" data-node="5b7eb0220d0b2">
+<div class="fl-module-content fl-node-content">
+<div class="fl-rich-text">
+<p>Call us:  800-567-8990    ☞    Hours of Operation: 7:00 am - 9:00 pm (Mon - Sun)</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fl-col fl-node-598f56b8bde3a fl-col-small" data-node="598f56b8bde3a">
+<div class="fl-col-content fl-node-content">
+<div class="fl-module fl-module-vamtam-icon-group fl-node-5b7eb061935d1" data-node="5b7eb061935d1">
+<div class="fl-module-content fl-node-content">
+<div class="fl-icon-group textright">
+<span class="fl-icon">
+<a href="#" target="_blank">
+<i class="icon icon-b theme " data-icon="&#59717;"></i>
+</a> </span>
+<span class="fl-icon">
+<a href="#" target="_blank">
+<i class="icon icon-b theme " data-icon="&#59716;"></i>
+</a> </span>
+<span class="fl-icon">
+<a href="#" target="_blank">
+<i class="icon icon-b theme " data-icon="&#59718;"></i>
+</a> </span>
+<span class="fl-icon">
+<a href="#" target="_blank">
+<i class="icon icon-b theme " data-icon="&#59712;"></i>
+</a> </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div> </nav>
+</div>
+<div class="limit-wrapper header-maybe-limit-wrapper header-padding">
+<div class="header-contents">
+<div class="first-row">
+<div class="logo-wrapper">
+<div class="logo-tagline">
+<a href="https://komo.vamtam.com/" title="Komo - Rentals &amp; Tours" class="logo " style="min-width:0px"> <img src="https://komo.vamtam.com/wp-content/uploads/2018/09/logo.svg" alt="Komo &#8211; Rentals &amp; Tours" class="normal-logo" style="" />
+<img src="https://komo.vamtam.com/wp-content/uploads/2018/09/logo-white.svg" alt="Komo &#8211; Rentals &amp; Tours" class="alternative-logo" style="" />
+</a>
+</div>
+<div class="mobile-logo-additions">
+<div id="vamtam-megamenu-main-menu-toggle"></div>
+</div>
+</div>
+</div>
+<div class="second-row ">
+<div id="menus">
+<nav id="main-menu" class="">
+<a href="#main" title="Skip to content" class="visuallyhidden">Skip to content</a>
+<div id="mega-menu-wrap-menu-header" class="mega-menu-wrap"><div class="mega-menu-toggle"><div class="mega-toggle-blocks-left"></div><div class="mega-toggle-blocks-center"></div><div class="mega-toggle-blocks-right"><div class='mega-toggle-block mega-menu-toggle-block mega-toggle-block-1' id='mega-toggle-block-1' tabindex='0'><span class='mega-toggle-label' role='button' aria-expanded='false'><span class='mega-toggle-label-closed'></span><span class='mega-toggle-label-open'></span></span></div></div></div><ul id="mega-menu-menu-header" class="mega-menu max-mega-menu mega-menu-horizontal mega-no-js" data-event="hover_intent" data-effect="slide" data-effect-speed="200" data-effect-mobile="disabled" data-effect-speed-mobile="0" data-mobile-force-width="false" data-second-click="go" data-document-click="collapse" data-vertical-behaviour="accordion" data-breakpoint="900" data-unbind="true" data-hover-intent-timeout="300" data-hover-intent-interval="100"><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-home mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-17134' id='mega-menu-item-17134'><a class="mega-menu-link" href="https://komo.vamtam.com/" aria-haspopup="true" aria-expanded="false" tabindex="0">Home<span class="mega-indicator"></span></a>
+<ul class="mega-sub-menu">
+<li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-home mega-menu-item-14688' id='mega-menu-item-14688'><a class="mega-menu-link" href="https://komo.vamtam.com/">Home Modern</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-13402' id='mega-menu-item-13402'><a class="mega-menu-link" href="https://komo.vamtam.com/home-classic/">Home – Classic</a></li></ul>
+</li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-16750' id='mega-menu-item-16750'><a class="mega-menu-link" href="https://komo.vamtam.com/rental/" aria-haspopup="true" aria-expanded="false" tabindex="0">Rental<span class="mega-indicator"></span></a>
+<ul class="mega-sub-menu">
+<li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-16754' id='mega-menu-item-16754'><a class="mega-menu-link" href="https://komo.vamtam.com/rental/">Rental</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-16749' id='mega-menu-item-16749'><a class="mega-menu-link" href="https://komo.vamtam.com/rental/packages-special-offers/">Packages &#038; Special Offers</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-16752' id='mega-menu-item-16752'><a class="mega-menu-link" href="https://komo.vamtam.com/rental/biking-rules-safety/">Biking Rules &#038; Safety</a></li></ul>
+</li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-current-menu-item mega-page_item mega-page-item-16885 mega-current_page_item mega-current-menu-ancestor mega-current-menu-parent mega-current_page_parent mega-current_page_ancestor mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-17264' id='mega-menu-item-17264'><a class="mega-menu-link" href="https://komo.vamtam.com/about-us/" aria-haspopup="true" aria-expanded="false" tabindex="0">About Us<span class="mega-indicator"></span></a>
+<ul class="mega-sub-menu">
+<li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-current-menu-item mega-page_item mega-page-item-16885 mega-current_page_item mega-menu-item-17265' id='mega-menu-item-17265'><a class="mega-menu-link" href="https://komo.vamtam.com/about-us/">About Us</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-17263' id='mega-menu-item-17263'><a class="mega-menu-link" href="https://komo.vamtam.com/about-us/locations/">Locations</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-16753' id='mega-menu-item-16753'><a class="mega-menu-link" href="https://komo.vamtam.com/about-us/faq/">FAQ</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-17244' id='mega-menu-item-17244'><a class="mega-menu-link" href="https://komo.vamtam.com/about-us/blog/">Tips</a></li></ul>
+</li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-align-bottom-left mega-menu-flyout mega-menu-item-17863' id='mega-menu-item-17863'><a class="mega-menu-link" href="https://komo.vamtam.com/bike-tours-2/" tabindex="0">Bike Tours</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-align-bottom-left mega-menu-flyout mega-menu-item-15958' id='mega-menu-item-15958'><a class="mega-menu-link" href="https://komo.vamtam.com/new-bikes/" tabindex="0">Shop</a></li><li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-11403' id='mega-menu-item-11403'><a class="mega-menu-link" href="#" aria-haspopup="true" aria-expanded="false" tabindex="0">Features<span class="mega-indicator"></span></a>
+<ul class="mega-sub-menu">
+<li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-11689' id='mega-menu-item-11689'><a class="mega-menu-link" href="https://komo.vamtam.com/features/">Features List</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-13730' id='mega-menu-item-13730'><a class="mega-menu-link" href="https://komo.vamtam.com/comingsoon/">Coming Soon</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-17999' id='mega-menu-item-17999'><a class="mega-menu-link" href="https://komo.vamtam.com/case-studies/">City breaks</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-17391' id='mega-menu-item-17391'><a class="mega-menu-link" href="https://komo.vamtam.com/standard-jetpack-gallery/">Gallery</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-13745' id='mega-menu-item-13745'><a class="mega-menu-link" href="https://komo.vamtam.com/animation-builder/">Animation Builder</a></li></ul>
+</li></ul><div class="mobile-top-bar"><div class="fl-builder-content fl-builder-content-13550 fl-builder-template fl-builder-row-template fl-builder-global-templates-locked" data-post-id="13550"><div class="fl-row fl-row-full-width fl-row-bg-color fl-node-598afcd2173a5 vamtam-rounded-corners fl-row-bg-attachment-scroll" data-node="598afcd2173a5">
+<div class="fl-row-content-wrap">
+<div class="fl-row-content fl-row-fixed-width fl-node-content">
+<div class="fl-col-group fl-node-5c82709097e2d" data-node="5c82709097e2d">
+<div class="fl-col fl-node-5c827090983e3 fl-col-has-cols" data-node="5c827090983e3">
+<div class="fl-col-content fl-node-content">
+<div class="fl-col-group fl-node-5c8270930c435 fl-col-group-nested fl-col-group-equal-height fl-col-group-align-center fl-col-group-custom-width" data-node="5c8270930c435">
+<div class="fl-col fl-node-598f56b8bddf8 fl-col-small" data-node="598f56b8bddf8">
+<div class="fl-col-content fl-node-content">
+<div class="fl-module fl-module-rich-text fl-node-5b7eb0220d0b2" data-node="5b7eb0220d0b2">
+<div class="fl-module-content fl-node-content">
+<div class="fl-rich-text">
+<p>Call us:  800-567-8990    ☞    Hours of Operation: 7:00 am - 9:00 pm (Mon - Sun)</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fl-col fl-node-598f56b8bde3a fl-col-small" data-node="598f56b8bde3a">
+<div class="fl-col-content fl-node-content">
+<div class="fl-module fl-module-vamtam-icon-group fl-node-5b7eb061935d1" data-node="5b7eb061935d1">
+<div class="fl-module-content fl-node-content">
+<div class="fl-icon-group textright">
+<span class="fl-icon">
+<a href="#" target="_blank">
+<i class="icon icon-b theme " data-icon="&#59717;"></i>
+</a> </span>
+<span class="fl-icon">
+<a href="#" target="_blank">
+<i class="icon icon-b theme " data-icon="&#59716;"></i>
+</a> </span>
+<span class="fl-icon">
+<a href="#" target="_blank">
+<i class="icon icon-b theme " data-icon="&#59718;"></i>
+</a> </span>
+<span class="fl-icon">
+<a href="#" target="_blank">
+<i class="icon icon-b theme " data-icon="&#59712;"></i>
+</a> </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div></div></nav>
+</div>
+</div>
+<div class="cart-dropdown hidden">
+<div class="cart-dropdown-inner">
+<a class="vamtam-cart-dropdown-link" href="https://komo.vamtam.com/cart/">
+<span class="icon theme">&#59751;</span>
+<span class="products cart-empty">...</span>
+</a>
+<div class="widget woocommerce widget_shopping_cart">
+<div class="widget_shopping_cart_content"></div>
+</div>
+</div>
+</div>
+<div id="header-text"><div>
+<link rel='stylesheet' id='fl-builder-layout-17273-css' href='https://komo.vamtam.com/wp-content/uploads/bb-plugin/cache/17273-layout-partial.css?ver=2bd39d56416cad6a92ec9d8b139f4b79' type='text/css' media='all' />
+<div class="fl-builder-content fl-builder-content-17273 fl-builder-template fl-builder-row-template fl-builder-global-templates-locked" data-post-id="17273"><div class="fl-row fl-row-full-width fl-row-bg-none fl-node-5b86aedb01c33 fl-row-bg-attachment-scroll" data-node="5b86aedb01c33">
+<div class="fl-row-content-wrap">
+<div class="fl-row-content fl-row-fixed-width fl-node-content">
+<div class="fl-col-group fl-node-5b86aedb01b58" data-node="5b86aedb01b58">
+<div class="fl-col fl-node-5b86aedb01bad" data-node="5b86aedb01bad">
+<div class="fl-col-content fl-node-content">
+<div class="fl-module fl-module-vamtam-button fl-node-5b86aedb01bf1" data-node="5b86aedb01bf1">
+<div class="fl-module-content fl-node-content">
+<div class="vamtam-button-wrap vamtam-button-width-auto" style="text-align:right">
+<a href="/rental/" target="_self" class="vamtam-button accent1 hover-accent6 button-solid icon-animation-disable" role="button" style="font-size:14px;line-height:16px;padding:14px 28px;">
+<span class="vamtam-button-text">Book a bike</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div> </div></div>
+</div>
+</div>
+</header>
+</div>
+<div id="page" class="main-container">
+<div id="main-content">
+<div id="sub-header" class="layout-full has-background has-background-image has-text-shadow">
+<div class="meta-header " style="background-image:url(&#039;https://komo.vamtam.com/wp-content/uploads/2017/08/photo-09.jpg&#039; );background-repeat:no-repeat;background-size:cover;background-attachment:scroll;">
+<div class="text-shadow"> </div>
+<div class="limit-wrapper vamtam-box-outer-padding">
+<div class="meta-header-inside">
+<header class="page-header layout-centered " data-progressive-animation="page-title">
+<h1 style="color:#ffffff" itemprop="headline">
+About Us
+</h1>
+<div class="page-header-line"></div>
+</header>
+</div>
+</div>
+</div>
+</div>
+<div id="main" role="main" class="vamtam-main layout-full  ">
+<div class="page-wrapper">
+<article id="post-16885" class="full post-16885 page type-page status-publish hentry">
+<div class="page-content clearfix the-content-parent">
+<div class="fl-builder-content fl-builder-content-16885 fl-builder-content-primary fl-builder-global-templates-locked" data-post-id="16885"><div class="fl-row fl-row-full-width fl-row-bg-color fl-node-5b8986d4144ed vamtam-rounded-corners fl-row-bg-attachment-scroll" data-node="5b8986d4144ed">
+<div class="fl-row-content-wrap">
+<div class="fl-row-content fl-row-fixed-width fl-node-content">
+<div class="fl-col-group fl-node-5b8986d4140d8 fl-col-group-equal-height fl-col-group-align-center fl-col-group-custom-width" data-node="5b8986d4140d8">
+<div class="fl-col fl-node-5b8986d414157 fl-col-has-cols" data-node="5b8986d414157">
+<div class="fl-col-content fl-node-content">
+<div class="fl-col-group fl-node-5b898d158b98d fl-col-group-nested fl-col-group-equal-height fl-col-group-align-center fl-col-group-custom-width" data-node="5b898d158b98d">
+<div class="fl-col fl-node-5b898d158bb7a fl-col-small" data-node="5b898d158bb7a">
+<div class="fl-col-content fl-node-content">
+<div class="fl-module fl-module-vamtam-heading fl-node-5c4b181f1f510" data-node="5c4b181f1f510">
+<div class="fl-module-content fl-node-content">
+<h2 class="vamtam-heading ">
+<span class="vamtam-heading-text">Yes, we can do it!</span>
+</h2>
+</div>
+</div>
+</div>
+</div>
+<div class="fl-col fl-node-5b898d158bbbd" data-node="5b898d158bbbd">
+<div class="fl-col-content fl-node-content">
+<div class="fl-module fl-module-rich-text fl-node-5b89616a5cdc4" data-node="5b89616a5cdc4">
+<div class="fl-module-content fl-node-content">
+<div class="fl-rich-text">
+<p style="text-align: left;">With a fleet of over 1000 bikes, we offer an all inclusive rental package that provides a map, helmet, chain lock and even a basket at no extra charge. We can fit you with the perfect bike because we carry all sizes and types of bikes. So whether you want to conquer the park on a mountain bike or enjoy a leisurely ride on a comfort or tandem bike, you can find it all here!</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fl-row fl-row-full-width fl-row-bg-none fl-node-5b89616a5ce77 vamtam-rounded-corners fl-row-bg-attachment-scroll" data-node="5b89616a5ce77">
+<div class="fl-row-content-wrap">
+<div class="fl-row-content fl-row-full-width fl-node-content">
+<div class="fl-col-group fl-node-5b89616a5cac7 fl-col-group-equal-height fl-col-group-align-center fl-col-group-custom-width fl-col-group-responsive-reversed" data-node="5b89616a5cac7">
+<div class="fl-col fl-node-5b89616a5cb43 fl-col-small fl-col-has-cols" data-node="5b89616a5cb43">
+<div class="fl-col-content fl-node-content">
+<div class="fl-module fl-module-photo fl-node-5b8983f5bad73" data-node="5b8983f5bad73" data-progressive-animation="move-from-bottom" data-vamtam-animation-options="{&quot;type&quot;:&quot;progressive&quot;,&quot;origin&quot;:&quot;center center&quot;,&quot;exit&quot;:false,&quot;delay&quot;:0,&quot;mobile&quot;:false,&quot;pin&quot;:false,&quot;pinTrigger&quot;:&quot;&quot;}">
+<div class="fl-module-content fl-node-content">
+<div class="fl-photo fl-photo-align-center" itemscope itemtype="http://schema.org/ImageObject">
+<div class="fl-photo-content fl-photo-img-svg">
+<img loading="lazy" class="fl-photo-img wp-image-16984 size-full" src="https://komo.vamtam.com/wp-content/uploads/2018/08/illustration-bike-man-2.svg" alt="illustration-bike-man-2" itemprop="image" height="175" width="180" title="illustration-bike-man-2" />
+</div>
+</div>
+</div>
+</div>
+<div class="fl-module fl-module-vamtam-heading fl-node-5b89834346e50" data-node="5b89834346e50" data-progressive-animation="move-from-bottom" data-vamtam-animation-options="{&quot;type&quot;:&quot;progressive&quot;,&quot;origin&quot;:&quot;center center&quot;,&quot;exit&quot;:false,&quot;delay&quot;:0,&quot;mobile&quot;:false,&quot;pin&quot;:false,&quot;pinTrigger&quot;:&quot;&quot;}">
+<div class="fl-module-content fl-node-content">
+<h2 class="vamtam-heading ">
+<span class="vamtam-heading-text">Get on and go!</span>
+</h2>
+</div>
+</div>
+<div class="fl-module fl-module-vamtam-separator fl-node-5b89616a5cd46" data-node="5b89616a5cd46">
+<div class="fl-module-content fl-node-content">
+<div class="fl-separator" style="border-top-color:var( --vamtam-accent-color-4 );opacity:1"></div>
+</div>
+</div>
+<div class="fl-col-group fl-node-5b898284045a0 fl-col-group-nested fl-col-group-equal-height fl-col-group-align-center" data-node="5b898284045a0">
+<div class="fl-col fl-node-5b8982840490f fl-col-small fl-visible-desktop" data-node="5b8982840490f">
+<div class="fl-col-content fl-node-content">
+</div>
+</div>
+<div class="fl-col fl-node-5b89828404970" data-node="5b89828404970">
+<div class="fl-col-content fl-node-content">
+<div class="fl-module fl-module-rich-text fl-node-5b8986e744997" data-node="5b8986e744997">
+<div class="fl-module-content fl-node-content">
+<div class="fl-rich-text">
+<h4>Only have an hour or two? No problem. Take a short bike ride for one hour. Have all the time in the world? Rent for an entire day and explore New York City at your leisure.</h></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fl-col fl-node-5b898284049b8 fl-col-small fl-visible-desktop" data-node="5b898284049b8">
+<div class="fl-col-content fl-node-content">
+</div>
+</div>
+</div>
+<div class="fl-col-group fl-node-5b89616a5cbef fl-col-group-nested" data-node="5b89616a5cbef">
+<div class="fl-col fl-node-5b89616a5cdff" data-node="5b89616a5cdff">
+<div class="fl-col-content fl-node-content">
+<div class="fl-module fl-module-vamtam-button fl-node-5b89616a5ce39" data-node="5b89616a5ce39" data-progressive-animation="fade" data-vamtam-animation-options="{&quot;type&quot;:&quot;progressive&quot;,&quot;origin&quot;:&quot;center center&quot;,&quot;exit&quot;:false,&quot;delay&quot;:0,&quot;mobile&quot;:false,&quot;pin&quot;:false,&quot;pinTrigger&quot;:&quot;&quot;}">
+<div class="fl-module-content fl-node-content">
+<div class="vamtam-button-wrap vamtam-button-width-auto" style="text-align:center">
+<a href="/rental/" target="_self" class="vamtam-button accent1 hover-accent6 button-solid icon-animation-disable" role="button" style="font-size:14px;line-height:16px;padding:18px 36px;">
+<span class="vamtam-button-text">Book rentals</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fl-col fl-node-5b89616a5cb08 fl-col-small vamtam-rounded-corners" data-node="5b89616a5cb08">
+<div class="fl-col-content fl-node-content">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fl-row fl-row-full-width fl-row-bg-none fl-node-5b8983f5baedf vamtam-rounded-corners fl-row-bg-attachment-scroll" data-node="5b8983f5baedf">
+<div class="fl-row-content-wrap">
+<div class="fl-row-content fl-row-full-width fl-node-content">
+<div class="fl-col-group fl-node-5b8983f5baaa9 fl-col-group-equal-height fl-col-group-align-center fl-col-group-custom-width" data-node="5b8983f5baaa9">
+<div class="fl-col fl-node-5b8983f5baaee fl-col-small vamtam-rounded-corners" data-node="5b8983f5baaee">
+<div class="fl-col-content fl-node-content">
+</div>
+</div>
+<div class="fl-col fl-node-5b8983f5bab2a fl-col-small fl-col-has-cols" data-node="5b8983f5bab2a">
+<div class="fl-col-content fl-node-content">
+<div class="fl-col-group fl-node-5b8983f5bac02 fl-col-group-nested" data-node="5b8983f5bac02">
+<div class="fl-col fl-node-5b8983f5bacbc" data-node="5b8983f5bacbc">
+<div class="fl-col-content fl-node-content">
+<div class="fl-module fl-module-photo fl-node-5b89876b0262b" data-node="5b89876b0262b" data-progressive-animation="move-from-bottom" data-vamtam-animation-options="{&quot;type&quot;:&quot;progressive&quot;,&quot;origin&quot;:&quot;center center&quot;,&quot;exit&quot;:false,&quot;delay&quot;:0,&quot;mobile&quot;:false,&quot;pin&quot;:false,&quot;pinTrigger&quot;:&quot;&quot;}">
+<div class="fl-module-content fl-node-content">
+<div class="fl-photo fl-photo-align-center" itemscope itemtype="http://schema.org/ImageObject">
+<div class="fl-photo-content fl-photo-img-svg">
+<img loading="lazy" class="fl-photo-img wp-image-17288 size-full" src="https://komo.vamtam.com/wp-content/uploads/2018/08/illustration-bike-duo.svg" alt="illustration-bike-duo" itemprop="image" height="174.3" width="329.8" title="illustration-bike-duo" />
+</div>
+</div>
+</div>
+</div>
+<div class="fl-module fl-module-vamtam-heading fl-node-5b8983f5bad35" data-node="5b8983f5bad35" data-progressive-animation="move-from-bottom" data-vamtam-animation-options="{&quot;type&quot;:&quot;progressive&quot;,&quot;origin&quot;:&quot;center center&quot;,&quot;exit&quot;:false,&quot;delay&quot;:0,&quot;mobile&quot;:false,&quot;pin&quot;:false,&quot;pinTrigger&quot;:&quot;&quot;}">
+<div class="fl-module-content fl-node-content">
+<h2 class="vamtam-heading ">
+<span class="vamtam-heading-text">Bundle &amp; save</span>
+</h2>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fl-module fl-module-vamtam-separator fl-node-5b8983f5baea4" data-node="5b8983f5baea4">
+<div class="fl-module-content fl-node-content">
+<div class="fl-separator" style="border-top-color:var( --vamtam-accent-color-4 );opacity:1"></div>
+</div>
+</div>
+<div class="fl-col-group fl-node-5b898483e777f fl-col-group-nested" data-node="5b898483e777f">
+<div class="fl-col fl-node-5b898483e7b25 fl-col-small fl-visible-desktop" data-node="5b898483e7b25">
+<div class="fl-col-content fl-node-content">
+</div>
+</div>
+<div class="fl-col fl-node-5b898483e7b76" data-node="5b898483e7b76">
+<div class="fl-col-content fl-node-content">
+<div class="fl-module fl-module-rich-text fl-node-5b8983f5bae66" data-node="5b8983f5bae66">
+<div class="fl-module-content fl-node-content">
+<div class="fl-rich-text">
+<h4>Want to do something else as well as biking around the city? How about taking our Liberty Cruise or our Night Bus Tour? Save when you purchase a combo ticket and get a very different look at the City!</h4>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fl-col fl-node-5b898483e7bc2 fl-col-small fl-visible-desktop" data-node="5b898483e7bc2">
+<div class="fl-col-content fl-node-content">
+</div>
+</div>
+</div>
+<div class="fl-col-group fl-node-5b8983f5bac41 fl-col-group-nested" data-node="5b8983f5bac41">
+<div class="fl-col fl-node-5b8983f5badb0" data-node="5b8983f5badb0">
+<div class="fl-col-content fl-node-content">
+<div class="fl-module fl-module-vamtam-button fl-node-5b8983f5baded" data-node="5b8983f5baded" data-progressive-animation="fade" data-vamtam-animation-options="{&quot;type&quot;:&quot;progressive&quot;,&quot;origin&quot;:&quot;center center&quot;,&quot;exit&quot;:false,&quot;delay&quot;:0,&quot;mobile&quot;:false,&quot;pin&quot;:false,&quot;pinTrigger&quot;:&quot;&quot;}">
+<div class="fl-module-content fl-node-content">
+<div class="vamtam-button-wrap vamtam-button-width-auto" style="text-align:center">
+<a href="/rental/packages-special-offers/" target="_self" class="vamtam-button accent1 hover-accent6 button-solid icon-animation-disable" role="button" style="font-size:14px;line-height:16px;padding:18px 36px;">
+<span class="vamtam-button-text">Explore packages</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fl-row fl-row-full-width fl-row-bg-none fl-node-5b8987a80bfa5 vamtam-rounded-corners fl-row-bg-attachment-scroll" data-node="5b8987a80bfa5">
+<div class="fl-row-content-wrap">
+<div class="fl-row-content fl-row-full-width fl-node-content">
+<div class="fl-col-group fl-node-5b8987a80c78e fl-col-group-equal-height fl-col-group-align-center fl-col-group-custom-width fl-col-group-responsive-reversed" data-node="5b8987a80c78e">
+<div class="fl-col fl-node-5b8987a80c7d4 fl-col-small fl-col-has-cols" data-node="5b8987a80c7d4">
+<div class="fl-col-content fl-node-content">
+<div class="fl-module fl-module-vamtam-heading fl-node-5b8987a80c850" data-node="5b8987a80c850" data-progressive-animation="move-from-bottom" data-vamtam-animation-options="{&quot;type&quot;:&quot;progressive&quot;,&quot;origin&quot;:&quot;center center&quot;,&quot;exit&quot;:false,&quot;delay&quot;:0,&quot;mobile&quot;:false,&quot;pin&quot;:false,&quot;pinTrigger&quot;:&quot;&quot;}">
+<div class="fl-module-content fl-node-content">
+<h2 class="vamtam-heading ">
+<span class="vamtam-heading-text">Bring friends, <br />make new ones.</span>
+</h2>
+</div>
+</div>
+<div class="fl-module fl-module-vamtam-separator fl-node-5b8987a80c88e" data-node="5b8987a80c88e">
+<div class="fl-module-content fl-node-content">
+<div class="fl-separator" style="border-top-color:var( --vamtam-accent-color-4 );opacity:1"></div>
+</div>
+</div>
+<div class="fl-col-group fl-node-5b8987a80c8cc fl-col-group-nested fl-col-group-equal-height fl-col-group-align-center" data-node="5b8987a80c8cc">
+<div class="fl-col fl-node-5b8987a80c90a fl-col-small fl-visible-desktop" data-node="5b8987a80c90a">
+<div class="fl-col-content fl-node-content">
+</div>
+</div>
+<div class="fl-col fl-node-5b8987a80c947" data-node="5b8987a80c947">
+<div class="fl-col-content fl-node-content">
+<div class="fl-module fl-module-rich-text fl-node-5b8987a80c98e" data-node="5b8987a80c98e">
+<div class="fl-module-content fl-node-content">
+<div class="fl-rich-text">
+<h4>Take a tour with a group and a guide. We offer in depth guided bike tours ranging from Central Park to Brooklyn, New York at Night to Harlem Tour and the All City Tour.</h4>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fl-col fl-node-5b8987a80c9cb fl-col-small fl-visible-desktop" data-node="5b8987a80c9cb">
+<div class="fl-col-content fl-node-content">
+</div>
+</div>
+</div>
+<div class="fl-col-group fl-node-5b8987a80cad8 fl-col-group-nested" data-node="5b8987a80cad8">
+<div class="fl-col fl-node-5b8987a80cb15" data-node="5b8987a80cb15">
+<div class="fl-col-content fl-node-content">
+<div class="fl-module fl-module-vamtam-button fl-node-5b8987a80cb59" data-node="5b8987a80cb59" data-progressive-animation="fade" data-vamtam-animation-options="{&quot;type&quot;:&quot;progressive&quot;,&quot;origin&quot;:&quot;center center&quot;,&quot;exit&quot;:false,&quot;delay&quot;:0,&quot;mobile&quot;:false,&quot;pin&quot;:false,&quot;pinTrigger&quot;:&quot;&quot;}">
+<div class="fl-module-content fl-node-content">
+<div class="vamtam-button-wrap vamtam-button-width-auto" style="text-align:center">
+<a href="/events/" target="_self" class="vamtam-button accent1 hover-accent6 button-solid icon-animation-disable" role="button" style="font-size:14px;line-height:16px;padding:18px 36px;">
+<span class="vamtam-button-text">Book a tour</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fl-col fl-node-5b8987a80cb97 fl-col-small vamtam-rounded-corners" data-node="5b8987a80cb97">
+<div class="fl-col-content fl-node-content">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fl-row fl-row-full-width fl-row-bg-none fl-node-5c4c82be37a41 vamtam-rounded-corners fl-row-bg-attachment-scroll" data-node="5c4c82be37a41">
+<div class="fl-row-content-wrap">
+<div class="fl-row-content fl-row-fixed-width fl-node-content">
+<div class="fl-col-group fl-node-5c4c82be38091 fl-col-group-equal-height fl-col-group-align-center fl-col-group-custom-width" data-node="5c4c82be38091">
+<div class="fl-col fl-node-5c4c82be380ef fl-col-has-cols" data-node="5c4c82be380ef">
+<div class="fl-col-content fl-node-content">
+<div class="fl-col-group fl-node-5c4c82be38142 fl-col-group-nested fl-col-group-equal-height fl-col-group-align-center fl-col-group-custom-width" data-node="5c4c82be38142">
+<div class="fl-col fl-node-5c4c82be3818f" data-node="5c4c82be3818f">
+<div class="fl-col-content fl-node-content">
+<div class="fl-module fl-module-vamtam-heading fl-node-5c4c82be381cd" data-node="5c4c82be381cd">
+<div class="fl-module-content fl-node-content">
+<h2 class="vamtam-heading ">
+<span class="vamtam-heading-text">We're here to help.</span>
+</h2>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fl-col-group fl-node-5c4c82be3820b fl-col-group-nested" data-node="5c4c82be3820b">
+<div class="fl-col fl-node-5c4c82be38249 fl-col-small fl-visible-desktop" data-node="5c4c82be38249">
+<div class="fl-col-content fl-node-content">
+</div>
+</div>
+<div class="fl-col fl-node-5c4c82be38286" data-node="5c4c82be38286">
+<div class="fl-col-content fl-node-content">
+<div class="fl-module fl-module-rich-text fl-node-5c4c82be382c5" data-node="5c4c82be382c5">
+<div class="fl-module-content fl-node-content">
+<div class="fl-rich-text">
+<p>We are open from to year round, so you can rent your bikes or return them at a time that is most convenient for you. We can also deliver your bikes to many of the major hotels in the surrounding area or you can come in and use the lockers at our location before you get started.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fl-col fl-node-5c4c82be38306 fl-col-small fl-visible-desktop" data-node="5c4c82be38306">
+<div class="fl-col-content fl-node-content">
+</div>
+</div>
+</div>
+<div class="fl-col-group fl-node-5c4c82d68d325 fl-col-group-nested fl-col-group-custom-width" data-node="5c4c82d68d325">
+<div class="fl-col fl-node-5c4c82d68d4ee fl-col-small fl-visible-desktop" data-node="5c4c82d68d4ee">
+<div class="fl-col-content fl-node-content">
+</div>
+</div>
+<div class="fl-col fl-node-5c4c82be3847f fl-col-small" data-node="5c4c82be3847f">
+<div class="fl-col-content fl-node-content">
+<div class="fl-module fl-module-vamtam-heading fl-node-5c4c82be384bc" data-node="5c4c82be384bc">
+<div class="fl-module-content fl-node-content">
+<h5 class="vamtam-heading ">
+<span class="vamtam-heading-text">Kona Central Park</span>
+</h5>
+</div>
+</div>
+<div class="fl-module fl-module-rich-text fl-node-5c4c82be384fa" data-node="5c4c82be384fa">
+<div class="fl-module-content fl-node-content">
+<div class="fl-rich-text">
+<p>New York, 203 West 58th Street&nbsp;<br />
++800-567-8990</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fl-col fl-node-5c4c82be383c6 fl-col-small" data-node="5c4c82be383c6">
+<div class="fl-col-content fl-node-content">
+<div class="fl-module fl-module-vamtam-heading fl-node-5c4c82be38405" data-node="5c4c82be38405">
+<div class="fl-module-content fl-node-content">
+<h5 class="vamtam-heading ">
+<span class="vamtam-heading-text">Kona Central Park</span>
+</h5>
+</div>
+</div>
+<div class="fl-module fl-module-rich-text fl-node-5c4c82be38442" data-node="5c4c82be38442">
+<div class="fl-module-content fl-node-content">
+<div class="fl-rich-text">
+<p>New York, 203 West 58th Street<br />
++800-567-8990</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fl-col fl-node-5c4c82d68d546 fl-col-small fl-visible-desktop" data-node="5c4c82d68d546">
+<div class="fl-col-content fl-node-content">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fl-row fl-row-full-width fl-row-bg-none fl-node-5c4c8371c304f vamtam-rounded-corners fl-row-bg-attachment-scroll" data-node="5c4c8371c304f">
+<div class="fl-row-content-wrap">
+<div class="fl-row-content fl-row-full-width fl-node-content">
+<div class="fl-col-group fl-node-5c4c8371d6538" data-node="5c4c8371d6538">
+<div class="fl-col fl-node-5c4c8371d66f6" data-node="5c4c8371d66f6">
+<div class="fl-col-content fl-node-content">
+<div class="fl-module fl-module-vamtam-map fl-node-5c4c82be38575 " data-node="5c4c82be38575">
+<div class="fl-module-content fl-node-content">
+<div class="fl-map">
+<iframe src="about:blank" data-src="https://maps.google.com/maps?q=892+9th+Ave%2C+New+York%2C+NY+10019%2C+%D0%A1%D1%8A%D0%B5%D0%B4%D0%B8%D0%BD%D0%B5%D0%BD%D0%B8+%D1%89%D0%B0%D1%82%D0%B8&iwloc=near&output=embed" height="300" frameborder="0" style="border:0;width:100%"></iframe>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div> </div>
+</article>
+</div>
+</div>
+</div>
+<div class="footer-wrapper" style="">
+<footer id="main-footer" class="main-footer">
+<link rel='stylesheet' id='fl-builder-layout-14759-css' href='https://komo.vamtam.com/wp-content/uploads/bb-plugin/cache/14759-layout-partial.css?ver=2477d82fa6bd178e02e71e0a90bdfa18' type='text/css' media="(max-width: 0px)" onload="media='all'" /><noscript><link rel='stylesheet'   href='https://komo.vamtam.com/wp-content/uploads/bb-plugin/cache/14759-layout-partial.css?ver=2477d82fa6bd178e02e71e0a90bdfa18' type='text/css' media='all' />
+</noscript>
+<div class="fl-builder-content fl-builder-content-14759 fl-builder-template fl-builder-layout-template fl-builder-global-templates-locked" data-post-id="14759"><div class="fl-row fl-row-full-width fl-row-bg-none fl-node-5c06864d6bd12 fl-row-bg-attachment-scroll" data-node="5c06864d6bd12">
+<div class="fl-row-content-wrap">
+<div class="fl-row-content fl-row-fixed-width fl-node-content">
+<div class="fl-col-group fl-node-5c06864d7cfb9" data-node="5c06864d7cfb9">
+<div class="fl-col fl-node-5c06864d7d1ba" data-node="5c06864d7d1ba">
+<div class="fl-col-content fl-node-content">
+<div class="fl-module fl-module-photo fl-node-5c06850e6d63d" data-node="5c06850e6d63d" data-progressive-animation="move-from-bottom" data-vamtam-animation-options="{&quot;type&quot;:&quot;immediate&quot;,&quot;origin&quot;:&quot;center center&quot;,&quot;exit&quot;:false,&quot;delay&quot;:-0.7,&quot;mobile&quot;:false,&quot;pin&quot;:false,&quot;pinTrigger&quot;:&quot;&quot;}">
+<div class="fl-module-content fl-node-content">
+<div class="fl-photo fl-photo-align-center" itemscope itemtype="http://schema.org/ImageObject">
+<div class="fl-photo-content fl-photo-img-svg">
+<img loading="lazy" class="fl-photo-img wp-image-17271 size-full" src="https://komo.vamtam.com/wp-content/uploads/2018/08/illustration-footer-top.svg" alt="illustration-footer-top" itemprop="image" height="20" width="133" title="illustration-footer-top" />
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fl-row fl-row-full-width fl-row-bg-color fl-node-5a01f34096306 vamtam-rounded-corners fl-row-bg-attachment-scroll" data-node="5a01f34096306">
+<div class="fl-row-content-wrap">
+<div class="fl-row-content fl-row-fixed-width fl-node-content">
+<div class="fl-col-group fl-node-5b83041eabcf1 fl-col-group-equal-height fl-col-group-align-bottom fl-col-group-custom-width" data-node="5b83041eabcf1">
+<div class="fl-col fl-node-5b83041eabffb fl-col-small fl-visible-desktop" data-node="5b83041eabffb">
+<div class="fl-col-content fl-node-content">
+</div>
+</div>
+<div class="fl-col fl-node-5b83041eac044 fl-col-small" data-node="5b83041eac044" data-progressive-animation="move-from-bottom" data-vamtam-animation-options="{&quot;type&quot;:&quot;immediate&quot;,&quot;origin&quot;:&quot;center center&quot;,&quot;exit&quot;:false,&quot;delay&quot;:0,&quot;mobile&quot;:false,&quot;pin&quot;:false,&quot;pinTrigger&quot;:&quot;&quot;}">
+<div class="fl-col-content fl-node-content">
+<div class="fl-module fl-module-vamtam-icon fl-node-5b8304f0e94de vamtam-scroll-to-top" data-node="5b8304f0e94de">
+<div class="fl-module-content fl-node-content">
+<span class="fl-icon-wrap">
+<span class="fl-icon">
+<a href="#" target="_self">
+<i class="icon icon-b theme " data-icon="&#59789;"></i>
+</a> </span>
+</span>
+</div>
+</div>
+</div>
+</div>
+<div class="fl-col fl-node-5b83041eac085 fl-col-small fl-visible-desktop" data-node="5b83041eac085">
+<div class="fl-col-content fl-node-content">
+</div>
+</div>
+</div>
+<div class="fl-col-group fl-node-5b8304189d935 fl-col-group-equal-height fl-col-group-align-top fl-col-group-custom-width" data-node="5b8304189d935">
+<div class="fl-col fl-node-5b8304189db5e fl-col-small vamtam-mobile-left" data-node="5b8304189db5e" data-progressive-animation="move-from-left" data-vamtam-animation-options="{&quot;type&quot;:&quot;immediate&quot;,&quot;origin&quot;:&quot;center center&quot;,&quot;exit&quot;:false,&quot;delay&quot;:0,&quot;mobile&quot;:false,&quot;pin&quot;:false,&quot;pinTrigger&quot;:&quot;&quot;}">
+<div class="fl-col-content fl-node-content">
+<div class="fl-module fl-module-rich-text fl-node-5b830473c3149" data-node="5b830473c3149">
+<div class="fl-module-content fl-node-content">
+<div class="fl-rich-text">
+<h6><span style="font-size: 14px;">Hours of Operation:</span><br />
+<span style="font-size: 14px;">7:00 am - 9:00 pm (Mon - Sun)</span></h6>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fl-col fl-node-5b8304189db9d fl-col-small fl-visible-desktop-medium" data-node="5b8304189db9d" data-progressive-animation="move-from-bottom" data-vamtam-animation-options="{&quot;type&quot;:&quot;immediate&quot;,&quot;origin&quot;:&quot;center center&quot;,&quot;exit&quot;:false,&quot;delay&quot;:0,&quot;mobile&quot;:false,&quot;pin&quot;:false,&quot;pinTrigger&quot;:&quot;&quot;}">
+<div class="fl-col-content fl-node-content">
+</div>
+</div>
+<div class="fl-col fl-node-5b8304189dbd9 fl-col-small vamtam-mobile-left" data-node="5b8304189dbd9" data-progressive-animation="move-from-right" data-vamtam-animation-options="{&quot;type&quot;:&quot;immediate&quot;,&quot;origin&quot;:&quot;center center&quot;,&quot;exit&quot;:false,&quot;delay&quot;:0,&quot;mobile&quot;:false,&quot;pin&quot;:false,&quot;pinTrigger&quot;:&quot;&quot;}">
+<div class="fl-col-content fl-node-content">
+<div class="fl-module fl-module-rich-text fl-node-5b83053f9cb8a" data-node="5b83053f9cb8a">
+<div class="fl-module-content fl-node-content">
+<div class="fl-rich-text">
+<h6><span style="font-size: 14px;">Call us:</span><br />
+<span style="font-size: 14px;">800-567-8990</span></h6>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fl-col-group fl-node-5b832cc3a1451 fl-col-group-equal-height fl-col-group-align-top fl-col-group-custom-width" data-node="5b832cc3a1451">
+<div class="fl-col fl-node-5b832cc3a1763 fl-col-small" data-node="5b832cc3a1763" data-progressive-animation="move-from-bottom" data-vamtam-animation-options="{&quot;type&quot;:&quot;immediate&quot;,&quot;origin&quot;:&quot;center center&quot;,&quot;exit&quot;:false,&quot;delay&quot;:-1,&quot;mobile&quot;:false,&quot;pin&quot;:false,&quot;pinTrigger&quot;:&quot;&quot;}">
+<div class="fl-col-content fl-node-content">
+<div class="fl-module fl-module-vamtam-heading fl-node-5b832d1c2324c" data-node="5b832d1c2324c">
+<div class="fl-module-content fl-node-content">
+<h2 class="vamtam-heading ">
+<span class="vamtam-heading-text">Bikes</span>
+</h2>
+</div>
+</div>
+<div class="fl-module fl-module-widget fl-node-5b83389a39623" data-node="5b83389a39623">
+<div class="fl-module-content fl-node-content">
+<div class="fl-widget">
+<link rel='stylesheet' id='vamtam-widgets-general-css' href='https://komo.vamtam.com/wp-content/themes/komo/vamtam/assets/css/dist/widgets/general.css?ver=1599142959' type='text/css' media="(max-width: 0px)" onload="media='all'" /><noscript><link rel='stylesheet'   href='https://komo.vamtam.com/wp-content/themes/komo/vamtam/assets/css/dist/widgets/general.css?ver=1599142959' type='text/css' media='all' />
+</noscript>
+<link rel='stylesheet' id='vamtam-widget-nav-menu-css' href='https://komo.vamtam.com/wp-content/themes/komo/vamtam/assets/css/dist/widgets/nav-menu.css?ver=1599142959' type='text/css' media="(max-width: 0px)" onload="media='all'" /><noscript><link rel='stylesheet'   href='https://komo.vamtam.com/wp-content/themes/komo/vamtam/assets/css/dist/widgets/nav-menu.css?ver=1599142959' type='text/css' media='all' />
+</noscript>
+<div class="widget widget_nav_menu"><div class="menu-bikes-container"><ul id="menu-bikes" class="menu"><li id="menu-item-17490" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17490"><a href="https://komo.vamtam.com/rental/handbrake-bike/">Handbrake Bike</a></li>
+<li id="menu-item-17489" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17489"><a href="https://komo.vamtam.com/rental/footbrake-bike/">Footbrake Bike</a></li>
+<li id="menu-item-17488" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17488"><a href="https://komo.vamtam.com/rental/small-bike/">Small Bike</a></li>
+<li id="menu-item-17485" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17485"><a href="https://komo.vamtam.com/rental/gentlemens-bike/">Gentlemen’s Bike</a></li>
+<li id="menu-item-17484" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17484"><a href="https://komo.vamtam.com/rental/kids-bike/">Kids Bike</a></li>
+<li id="menu-item-17483" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17483"><a href="https://komo.vamtam.com/rental/tandem-bike/">Tandem Bike</a></li>
+<li id="menu-item-17486" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17486"><a href="https://komo.vamtam.com/rental/electric-bike/">Electric Bike</a></li>
+<li id="menu-item-17487" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17487"><a href="https://komo.vamtam.com/rental/cargo-bike/">Cargo Bike</a></li>
+</ul></div></div></div>
+</div>
+</div>
+<div class="fl-module fl-module-vamtam-button fl-node-5b832d7602155" data-node="5b832d7602155">
+<div class="fl-module-content fl-node-content">
+<div class="vamtam-button-wrap vamtam-button-width-auto" style="text-align:left">
+<a href="/rental/" target="_self" class="vamtam-button accent1 hover-accent6 button-solid icon-animation-disable" role="button" style="font-size:14px;line-height:16px;padding:14px 28px;">
+<span class="vamtam-button-text">Rent now</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fl-col fl-node-5b832cc3a17ac fl-col-small" data-node="5b832cc3a17ac" data-progressive-animation="move-from-bottom" data-vamtam-animation-options="{&quot;type&quot;:&quot;immediate&quot;,&quot;origin&quot;:&quot;center center&quot;,&quot;exit&quot;:false,&quot;delay&quot;:-1,&quot;mobile&quot;:false,&quot;pin&quot;:false,&quot;pinTrigger&quot;:&quot;&quot;}">
+<div class="fl-col-content fl-node-content">
+<div class="fl-module fl-module-vamtam-heading fl-node-5b832dfc93b7c" data-node="5b832dfc93b7c">
+<div class="fl-module-content fl-node-content">
+<h2 class="vamtam-heading ">
+<span class="vamtam-heading-text">Tours</span>
+</h2>
+</div>
+</div>
+<div class="fl-module fl-module-widget fl-node-5b8d85b4e0e2b" data-node="5b8d85b4e0e2b">
+<div class="fl-module-content fl-node-content">
+<div class="fl-widget">
+<div class="widget widget_nav_menu"><div class="menu-tours-container"><ul id="menu-tours" class="menu"><li id="menu-item-18291" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-18291"><a href="/classes/art-tour-in-historic-center/">Art tour in historic center</a></li>
+<li id="menu-item-18292" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-18292"><a href="/classes/cultural-thematic-tours/">Cultural &#038; thematic tours</a></li>
+<li id="menu-item-18293" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-18293"><a href="/classes/family-friendly-tours/">Family friendly tours</a></li>
+<li id="menu-item-18294" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-18294"><a href="/classes/explore-central-park-in-one-day/">Explore Central Park in one day</a></li>
+<li id="menu-item-18295" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-18295"><a href="/classes/climb-to-the-highest-peak/">Climb to the highest peak</a></li>
+<li id="menu-item-18296" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-18296"><a href="/classes/holiday-seasonal-tours/">Holiday &#038; seasonal tours</a></li>
+<li id="menu-item-18297" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-18297"><a href="/classes/explore-central-park/">Explore Central Park</a></li>
+</ul></div></div></div>
+</div>
+</div>
+<div class="fl-module fl-module-vamtam-button fl-node-5b832d4e7e389" data-node="5b832d4e7e389">
+<div class="fl-module-content fl-node-content">
+<div class="vamtam-button-wrap vamtam-button-width-auto" style="text-align:left">
+<a href="/events/" target="_self" class="vamtam-button accent1 hover-accent6 button-solid icon-animation-disable" role="button" style="font-size:14px;line-height:16px;padding:14px 28px;">
+<span class="vamtam-button-text">Book now</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fl-col fl-node-5b832cc3a17e8 fl-col-small" data-node="5b832cc3a17e8" data-progressive-animation="move-from-bottom" data-vamtam-animation-options="{&quot;type&quot;:&quot;immediate&quot;,&quot;origin&quot;:&quot;center center&quot;,&quot;exit&quot;:false,&quot;delay&quot;:-1,&quot;mobile&quot;:false,&quot;pin&quot;:false,&quot;pinTrigger&quot;:&quot;&quot;}">
+<div class="fl-col-content fl-node-content">
+<div class="fl-module fl-module-vamtam-heading fl-node-5afa16489b048" data-node="5afa16489b048">
+<div class="fl-module-content fl-node-content">
+<h2 class="vamtam-heading ">
+<span class="vamtam-heading-text">Locations</span>
+</h2>
+</div>
+</div>
+<div class="fl-module fl-module-rich-text fl-node-5b83351e8fb6c" data-node="5b83351e8fb6c">
+<div class="fl-module-content fl-node-content">
+<div class="fl-rich-text">
+<p>Kona Central Park:<br />
+203 West 58th Street<br />
++800-567-8990</p>
+<p>Kona Central Park:<br />
+203 West 58th Street<br />
++800-567-8990</p>
+<p>Kona Central Park:<br />
+203 West 58th Street<br />
++800-567-8990</p>
+</div>
+</div>
+</div>
+<div class="fl-module fl-module-rich-text fl-node-5b832dac65830" data-node="5b832dac65830">
+<div class="fl-module-content fl-node-content">
+<div class="fl-rich-text">
+<p><a href="/about-us/locations/">View all locations →</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fl-col fl-node-5b832cc3a1828 fl-col-small" data-node="5b832cc3a1828" data-progressive-animation="move-from-bottom" data-vamtam-animation-options="{&quot;type&quot;:&quot;immediate&quot;,&quot;origin&quot;:&quot;center center&quot;,&quot;exit&quot;:false,&quot;delay&quot;:-1,&quot;mobile&quot;:false,&quot;pin&quot;:false,&quot;pinTrigger&quot;:&quot;&quot;}">
+<div class="fl-col-content fl-node-content">
+<div class="fl-module fl-module-vamtam-heading fl-node-5b8334c383b8e" data-node="5b8334c383b8e">
+<div class="fl-module-content fl-node-content">
+<h2 class="vamtam-heading ">
+<span class="vamtam-heading-text">About</span>
+</h2>
+</div>
+</div>
+<div class="fl-module fl-module-widget fl-node-5b8337d124538" data-node="5b8337d124538">
+<div class="fl-module-content fl-node-content">
+<div class="fl-widget">
+<div class="widget widget_nav_menu"><div class="menu-footer-about-container"><ul id="menu-footer-about" class="menu"><li id="menu-item-17050" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-16885 current_page_item menu-item-17050"><a href="https://komo.vamtam.com/about-us/" aria-current="page">About Us</a></li>
+<li id="menu-item-17051" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17051"><a href="https://komo.vamtam.com/about-us/faq/">FAQ</a></li>
+<li id="menu-item-17052" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17052"><a href="https://komo.vamtam.com/features/">Features List</a></li>
+<li id="menu-item-17053" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17053"><a href="https://komo.vamtam.com/comingsoon/">Coming Soon</a></li>
+<li id="menu-item-17054" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17054"><a href="https://komo.vamtam.com/animation-builder/">Animation Builder</a></li>
+<li id="menu-item-17055" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17055"><a href="https://komo.vamtam.com/appointments/">Appointments</a></li>
+<li id="menu-item-17057" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17057"><a href="https://komo.vamtam.com/events/">Events</a></li>
+</ul></div></div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="fl-col fl-node-5b832cc3a1865 fl-col-small" data-node="5b832cc3a1865" data-progressive-animation="move-from-bottom" data-vamtam-animation-options="{&quot;type&quot;:&quot;immediate&quot;,&quot;origin&quot;:&quot;center center&quot;,&quot;exit&quot;:false,&quot;delay&quot;:-1,&quot;mobile&quot;:false,&quot;pin&quot;:false,&quot;pinTrigger&quot;:&quot;&quot;}">
+<div class="fl-col-content fl-node-content">
+<div class="fl-module fl-module-vamtam-heading fl-node-5b8334c760c49" data-node="5b8334c760c49">
+<div class="fl-module-content fl-node-content">
+<h2 class="vamtam-heading ">
+<span class="vamtam-heading-text">Languages</span>
+</h2>
+</div>
+</div>
+<div class="fl-module fl-module-widget fl-node-5b83398a61565" data-node="5b83398a61565">
+<div class="fl-module-content fl-node-content">
+<div class="fl-widget">
+<div class="widget widget_nav_menu"><div class="menu-languages-container"><ul id="menu-languages" class="menu"><li id="menu-item-17068" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17068"><a href="#">English</a></li>
+<li id="menu-item-17069" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17069"><a href="#">Nederlands</a></li>
+<li id="menu-item-17070" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17070"><a href="#">Français</a></li>
+<li id="menu-item-17071" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17071"><a href="#">Deutsch</a></li>
+<li id="menu-item-17072" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17072"><a href="#">Italiano</a></li>
+<li id="menu-item-17073" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17073"><a href="#">Español</a></li>
+<li id="menu-item-17074" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17074"><a href="#">Português</a></li>
+</ul></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fl-col-group fl-node-5b8330b64663f" data-node="5b8330b64663f">
+<div class="fl-col fl-node-5b8330b6469b8 fl-col-has-cols" data-node="5b8330b6469b8">
+<div class="fl-col-content fl-node-content">
+<div class="fl-col-group fl-node-5b8330bcf396d fl-col-group-nested fl-col-group-custom-width" data-node="5b8330bcf396d">
+<div class="fl-col fl-node-5b8330bcf3b50 fl-col-small" data-node="5b8330bcf3b50">
+<div class="fl-col-content fl-node-content">
+<div class="fl-module fl-module-photo fl-node-5b8333651e91f fl-visible-desktop-medium" data-node="5b8333651e91f" data-progressive-animation="move-from-right" data-vamtam-animation-options="{&quot;type&quot;:&quot;progressive&quot;,&quot;origin&quot;:&quot;center center&quot;,&quot;exit&quot;:false,&quot;delay&quot;:0,&quot;mobile&quot;:false,&quot;pin&quot;:false,&quot;pinTrigger&quot;:&quot;&quot;}">
+<div class="fl-module-content fl-node-content">
+<div class="fl-photo fl-photo-align-center" itemscope itemtype="http://schema.org/ImageObject">
+<div class="fl-photo-content fl-photo-img-svg">
+<img loading="lazy" class="fl-photo-img wp-image-17047 size-full" src="https://komo.vamtam.com/wp-content/uploads/2018/08/illustration-bike-man-2-footer.svg" alt="illustration-bike-man-2-footer" itemprop="image" height="77.4" width="79.5" title="illustration-bike-man-2-footer" />
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fl-col fl-node-5b8330bcf3b90 fl-col-small" data-node="5b8330bcf3b90">
+<div class="fl-col-content fl-node-content">
+<div class="fl-module fl-module-photo fl-node-5b8333c7a7d68 fl-visible-desktop-medium" data-node="5b8333c7a7d68">
+<div class="fl-module-content fl-node-content">
+<div class="fl-photo fl-photo-align-center" itemscope itemtype="http://schema.org/ImageObject">
+<div class="fl-photo-content fl-photo-img-svg">
+<img loading="lazy" class="fl-photo-img wp-image-17046 size-full" src="https://komo.vamtam.com/wp-content/uploads/2018/08/illustration-bike-man-1-footer.svg" alt="illustration-bike-man-1-footer" itemprop="image" height="93.7" width="39.5" title="illustration-bike-man-1-footer" />
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fl-col fl-node-5b8330bcf3bcf fl-col-small" data-node="5b8330bcf3bcf">
+<div class="fl-col-content fl-node-content">
+<div class="fl-module fl-module-photo fl-node-5b8334533522b" data-node="5b8334533522b" data-progressive-animation="move-from-right" data-vamtam-animation-options="{&quot;type&quot;:&quot;progressive&quot;,&quot;origin&quot;:&quot;center center&quot;,&quot;exit&quot;:false,&quot;delay&quot;:0,&quot;mobile&quot;:false,&quot;pin&quot;:false,&quot;pinTrigger&quot;:&quot;&quot;}">
+<div class="fl-module-content fl-node-content">
+<div class="fl-photo fl-photo-align-center" itemscope itemtype="http://schema.org/ImageObject">
+<div class="fl-photo-content fl-photo-img-svg">
+<img loading="lazy" class="fl-photo-img wp-image-16990 size-full" src="https://komo.vamtam.com/wp-content/uploads/2018/08/illustration-footer-woman.svg" alt="illustration-footer-woman" itemprop="image" height="126" width="130" title="illustration-footer-woman" />
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fl-col-group fl-node-5c826f7e297c4" data-node="5c826f7e297c4">
+<div class="fl-col fl-node-5c826f7e2990e fl-col-has-cols" data-node="5c826f7e2990e">
+<div class="fl-col-content fl-node-content">
+<div class="fl-col-group fl-node-5c826f8b5c71f fl-col-group-nested fl-col-group-equal-height fl-col-group-align-center fl-col-group-custom-width" data-node="5c826f8b5c71f">
+<div class="fl-col fl-node-5b832f61d9219 fl-col-small" data-node="5b832f61d9219">
+<div class="fl-col-content fl-node-content">
+<div class="fl-module fl-module-rich-text fl-node-5b832f0dc0a3a" data-node="5b832f0dc0a3a">
+<div class="fl-module-content fl-node-content">
+<div class="fl-rich-text">
+<p><span style="font-size: 12px;">© 2020 Bike Rental Theme / </span><a href="https://themeforest.net/user/vamtam/portfolio"><span style="font-size: 12px;">VamTam Themes</span></a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fl-col fl-node-5b832f61d9259 fl-col-small" data-node="5b832f61d9259">
+<div class="fl-col-content fl-node-content">
+<div class="fl-module fl-module-vamtam-icon-group fl-node-5aa49361006f3" data-node="5aa49361006f3">
+<div class="fl-module-content fl-node-content">
+<div class="fl-icon-group textcenter">
+<span class="fl-icon">
+<a href="#" target="_blank">
+<i class="icon icon-b theme has-background" data-icon="&#59717;"></i>
+</a> </span>
+<span class="fl-icon">
+<a href="#" target="_blank">
+<i class="icon icon-b theme has-background" data-icon="&#59716;"></i>
+</a> </span>
+<span class="fl-icon">
+<a href="#" target="_blank">
+<i class="icon icon-b theme has-background" data-icon="&#59718;"></i>
+</a> </span>
+<span class="fl-icon">
+<a href="#" target="_blank">
+<i class="icon icon-b theme has-background" data-icon="&#59712;"></i>
+</a> </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fl-col fl-node-5b832f61d9295 fl-col-small" data-node="5b832f61d9295">
+<div class="fl-col-content fl-node-content">
+<div class="fl-module fl-module-rich-text fl-node-5b832f59ec00c" data-node="5b832f59ec00c">
+<div class="fl-module-content fl-node-content">
+<div class="fl-rich-text">
+<p><a href="/biking-rules-safety/">Terms and Conditions</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div> </footer>
+</div>
+</div>
+<div id="vamtam-overlay-search">
+<button id="vamtam-overlay-search-close"><span class='icon shortcode theme  use-hover' style=''>&#59700;</span></button>
+<form action="https://komo.vamtam.com/" class="searchform" method="get" role="search" novalidate="">
+<input type="search" required="required" placeholder="Search..." name="s" value="" />
+</form>
+</div>
+<div id="scroll-to-top" class="vamtam-scroll-to-top icon">&#59705;</div>
+<script type='text/javascript' defer src='https://komo.vamtam.com/wp-content/plugins/vamtam-elements-b/assets/fl-photo.js?ver=5.5.3' id='vamtam-fl-photo-js'></script>
+<script type='text/javascript' defer src='https://komo.vamtam.com/wp-content/uploads/bb-plugin/cache/16885-layout.js?ver=da7d63af2c74398677966da3ba61a59a' id='fl-builder-layout-16885-js'></script>
+<script type='text/javascript' defer src='https://komo.vamtam.com/wp-content/plugins/revslider/public/assets/js/rbtools.min.js?ver=6.2.18' id='tp-tools-js'></script>
+<script type='text/javascript' defer src='https://komo.vamtam.com/wp-content/plugins/revslider/public/assets/js/rs6.min.js?ver=6.2.18' id='revmin-js'></script>
+<script type='text/javascript' id='vamtam-all-js-extra'>
+/* <![CDATA[ */
+var VAMTAM_FRONT = {"ajaxurl":"https:\/\/komo.vamtam.com\/wp-admin\/admin-ajax.php","jspath":"https:\/\/komo.vamtam.com\/wp-content\/themes\/komo\/vamtam\/assets\/js\/","mobile_header_breakpoint":"900px","cube_path":"https:\/\/komo.vamtam.com\/wp-content\/themes\/komo\/vamtam\/assets\/cubeportfolio\/","beaver_responsive":"992","beaver_small":"768","content_width":"1260"};
+var wc_cart_fragments_params = {"ajax_url":"https:\/\/komo.vamtam.com\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%","cart_hash_key":"wc_cart_hash_a1346b9cd738912277f6b4b29b2c76d3","fragment_name":"wc_fragments_a1346b9cd738912277f6b4b29b2c76d3","request_timeout":"5000","jspath":"https:\/\/komo.vamtam.com\/wp-content\/plugins\/woocommerce\/assets\/js\/frontend\/cart-fragments.min.js","csspath":"https:\/\/komo.vamtam.com\/wp-content\/plugins\/woocommerce\/assets\/css\/woocommerce.css"};
+/* ]]> */
+</script>
+<script type='text/javascript' defer src='https://komo.vamtam.com/wp-content/themes/komo/vamtam/assets/js/all.min.js?ver=1599142959' id='vamtam-all-js'></script>
+<script type='text/javascript' defer src='https://komo.vamtam.com/wp-includes/js/hoverIntent.min.js?ver=1.8.1' id='hoverIntent-js'></script>
+<script type='text/javascript' id='megamenu-js-extra'>
+/* <![CDATA[ */
+var megamenu = {"timeout":"300","interval":"100"};
+/* ]]> */
+</script>
+<script type='text/javascript' defer src='https://komo.vamtam.com/wp-content/plugins/megamenu/js/maxmegamenu.js?ver=2.8' id='megamenu-js'></script>
+<script type='text/javascript' defer src='https://komo.vamtam.com/wp-includes/js/wp-embed.min.js?ver=5.5.3' id='wp-embed-js'></script>
+<script type='text/javascript' defer src='https://komo.vamtam.com/wp-content/themes/komo/vamtam/assets/js/build/sticky-header.min.js?ver=1599142959' id='vamtam-sticky-header-js'></script>
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"9700abca30","applicationID":"9339867","transactionName":"YFUHbUVUDBZZAkZZXFkfJFpDXA0LFxFTV1Y=","queueTime":0,"applicationTime":1886,"atts":"TBIEGw1OHxg=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
